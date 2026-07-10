@@ -1,0 +1,77 @@
+:root{
+  --bg:#F1EADD; --bg-2:#E8DFCD; --paper:#F8F3E9;
+  --ink:#2A2620; --ink-soft:#514A3F; --muted:#8A7F6E;
+  --sage:#A8B89C; --sage-deep:#6F8466; --forest:#41513A;
+  --terra:#C89B7B; --terra-deep:#A87655;
+  --line:rgba(42,38,32,.14); --line-strong:rgba(42,38,32,.32);
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+html{ scroll-behavior:smooth; }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:'DM Sans',system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  overflow-x:clip;
+}
+a{ color:var(--terra-deep); text-decoration:none; }
+a:hover{ color:var(--ink); }
+em,i{ font-style:italic; }
+::selection{ background:var(--sage); color:var(--forest); }
+@keyframes enraiz-marquee{ from{transform:translate3d(0,0,0)} to{transform:translate3d(-50%,0,0)} }
+
+@media (max-width:860px){
+  [data-navlinks]{ display:none !important; }
+  [data-burger]{ display:flex !important; }
+  [data-manifesto]{ height:220vh !important; }
+  [data-m~="two"], [data-m~="three"], [data-m~="hero-a"]{ grid-template-columns:1fr !important; }
+  [data-m~="hero-a"]{ align-items:start !important; }
+  [data-m~="sticky"]{ position:static !important; top:auto !important; }
+  [data-m~="specb"]{ grid-template-columns:auto 1fr !important; }
+  [data-specmeta]{ display:none !important; }
+}
+@media (max-width:540px){
+  [data-m~="pricecards"]{ grid-template-columns:1fr !important; }
+}
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *{ animation-duration:.01ms !important; animation-iteration-count:1 !important; }
+}
+
+/* ===== NAV (estado base + scrolled) ===== */
+#site-nav{
+  position:fixed; top:0; left:0; right:0; z-index:50;
+  display:flex; align-items:center; justify-content:space-between;
+  transition:background .45s ease, box-shadow .45s ease, padding .35s ease;
+  padding:clamp(14px,2.2vw,22px) clamp(18px,4vw,56px);
+  background:transparent;
+}
+#site-nav.scrolled{
+  padding:10px clamp(18px,4vw,56px);
+  background:rgba(241,234,221,.85);
+  backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+  box-shadow:0 1px 0 var(--line), 0 10px 30px rgba(42,38,32,.05);
+}
+
+/* ===== hover states (originalmente style-hover de Claude Design) ===== */
+/* inline styles ganan por especificidad, por eso van con !important */
+.h-dark{ transition:background .3s ease, color .3s ease; }
+.h-dark:hover{ background:var(--terra-deep) !important; }
+
+.h-spec:hover{
+  background:var(--paper) !important;
+  padding-left:clamp(14px,2.2vw,30px) !important;
+  padding-right:clamp(14px,2.2vw,30px) !important;
+}
+
+.h-charla{ transition:background .3s ease, color .3s ease; }
+.h-charla:hover{ background:var(--terra-deep) !important; color:var(--paper) !important; }
+
+.h-charla-link{ transition:color .3s ease, border-color .3s ease; }
+.h-charla-link:hover{ color:var(--terra) !important; border-bottom-color:var(--terra) !important; }
+
+.h-card{ transition:background .3s ease, border-color .3s ease; }
+.h-card:hover{
+  background:rgba(248,243,233,.14) !important;
+  border-color:rgba(248,243,233,.3) !important;
+}
