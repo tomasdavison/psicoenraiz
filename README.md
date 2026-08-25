@@ -1,6 +1,6 @@
 # psico.enraiz
 
-Sitio web de la **Lic. Juliana Nuñez Laya** ([@psico.enraiz](https://instagram.com/psico.enraiz)) — psicóloga clínica, enfoque psicoanalítico integrativo. Sesiones online.
+Sitio web de la **Lic. Juliana Núñez Laya** ([@psico.enraiz](https://instagram.com/psico.enraiz)) — psicóloga clínica, enfoque psicoanalítico integrativo. Sesiones online.
 
 Proyecto [Next.js](https://nextjs.org) (App Router). El diseño proviene de Claude Design y está embebido de forma fiel en `components/PsicoEnraiz.js`, con las animaciones (canvas de raíces, hero por líneas, manifiesto pineado, marquee) portadas a un `useEffect`.
 
@@ -29,5 +29,4 @@ npm start
 
 ## Notas
 
-- Los precios se muestran en ARS o USD según la zona horaria del visitante (Argentina vs. exterior), detectada en el cliente.
 - Deploy sugerido: [Vercel](https://vercel.com) (detecta Next.js automáticamente).

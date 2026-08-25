@@ -2,13 +2,13 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata = {
-  title: "Lic. Juliana Nuñez Laya · psico.enraiz",
+  title: "Lic. Juliana Núñez Laya · psico.enraiz",
   description:
-    "Psicóloga clínica con enfoque psicoanalítico integrativo. Sesiones online para adolescentes, adultos, parejas y familias. Volver a la raíz de lo que duele e insiste.",
+    "Psicología clínica con enfoque psicoanalítico integrativo. Atención online para adolescentes, adultos, parejas y familias. Supervisiones, charlas y talleres.",
   openGraph: {
-    title: "Lic. Juliana Nuñez Laya · psico.enraiz",
+    title: "Lic. Juliana Núñez Laya · psico.enraiz",
     description:
-      "Psicóloga clínica con enfoque psicoanalítico integrativo. Sesiones online para adolescentes, adultos, parejas y familias.",
+      "Psicología clínica con enfoque psicoanalítico integrativo. Atención online para adolescentes, adultos, parejas y familias. Supervisiones, charlas y talleres.",
     type: "website",
   },
 };

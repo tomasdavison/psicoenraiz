@@ -2,6 +2,16 @@
 
 import { useEffect } from "react";
 
+const WA_NUMBER = "5491159396866";
+const WA_MSG_TERAPIA = encodeURIComponent(
+  "Hola Juliana, vi tu página y quisiera consultarte por un espacio de terapia."
+);
+const WA_MSG_SUPERVISION = encodeURIComponent(
+  "Hola Juliana, vi en tu página la propuesta de supervisión clínica y quisiera recibir más información."
+);
+const WA_LINK_TERAPIA = `https://wa.me/${WA_NUMBER}?text=${WA_MSG_TERAPIA}`;
+const WA_LINK_SUPERVISION = `https://wa.me/${WA_NUMBER}?text=${WA_MSG_SUPERVISION}`;
+
 const MARKUP = `
 <div style="position:relative; min-height:100vh; background:var(--bg); overflow-x:clip;">
 
@@ -22,10 +32,12 @@ const MARKUP = `
       </svg>
       <span style="font-family:'Cormorant Garamond'; font-weight:500; font-size:20px; letter-spacing:.01em;">psico<span style="color:var(--terra-deep);">.</span>enraiz</span>
     </a>
-    <div data-navlinks="" style="display:flex; align-items:center; gap:clamp(18px,2.4vw,34px); font-size:13.5px; letter-spacing:.01em;">
+    <div data-navlinks="" style="display:flex; align-items:center; gap:clamp(16px,2.2vw,30px); font-size:13.5px; letter-spacing:.01em;">
       <a href="#enfoque" style="color:var(--ink-soft);">Enfoque</a>
       <a href="#especialidades" style="color:var(--ink-soft);">Especialidades</a>
+      <a href="#supervision" style="color:var(--ink-soft);">Supervisión</a>
       <a href="#charlas" style="color:var(--ink-soft);">Charlas</a>
+      <a href="#sesiones" style="color:var(--ink-soft);">Sesiones</a>
       <a href="#contacto" class="h-dark" style="display:inline-flex; align-items:center; gap:7px; padding:9px 18px; border-radius:999px; background:var(--ink); color:var(--paper);">Escribime</a>
     </div>
     <button id="burger" data-burger="" style="display:none; align-items:center; justify-content:center; width:44px; height:44px; border:1px solid var(--line-strong); border-radius:999px; background:rgba(248,243,233,.6); color:var(--ink); cursor:pointer;">
@@ -38,7 +50,9 @@ const MARKUP = `
     <button id="mobileClose" style="position:absolute; top:24px; right:24px; width:44px; height:44px; border:1px solid var(--line-strong); border-radius:999px; background:transparent; color:var(--ink); cursor:pointer; font-size:20px;">×</button>
     <a href="#enfoque" class="mm-link" style="font-family:'Cormorant Garamond'; font-size:38px; color:var(--ink); padding:8px 0;">Enfoque</a>
     <a href="#especialidades" class="mm-link" style="font-family:'Cormorant Garamond'; font-size:38px; color:var(--ink); padding:8px 0;">Especialidades</a>
+    <a href="#supervision" class="mm-link" style="font-family:'Cormorant Garamond'; font-size:38px; color:var(--ink); padding:8px 0;">Supervisión</a>
     <a href="#charlas" class="mm-link" style="font-family:'Cormorant Garamond'; font-size:38px; color:var(--ink); padding:8px 0;">Charlas y talleres</a>
+    <a href="#sesiones" class="mm-link" style="font-family:'Cormorant Garamond'; font-size:38px; color:var(--ink); padding:8px 0;">Sesiones</a>
     <a href="#contacto" class="mm-link" style="font-family:'Cormorant Garamond'; font-size:38px; color:var(--terra-deep); padding:8px 0;"><em>Escribime</em></a>
   </div>
 
@@ -54,16 +68,16 @@ const MARKUP = `
           <span style="display:block; overflow:hidden;"><span data-line="" style="display:block;">de lo que <em style="color:var(--terra-deep);">duele</em></span></span>
           <span style="display:block; overflow:hidden;"><span data-line="" style="display:block;">e <em style="color:var(--terra-deep);">insiste</em>.</span></span>
         </h1>
-        <p data-reveal="" style="max-width:44ch; margin:clamp(24px,4vh,40px) 0 0; font-size:clamp(16px,1.3vw,19px); line-height:1.6; color:var(--ink-soft);">Acompaño a personas, parejas y familias que quieren entender qué les pasa: no solo aliviar el síntoma, sino comprender por qué les pasa lo que les pasa, y cómo dejar de repetir esos patrones.</p>
+        <p data-reveal="" style="max-width:44ch; margin:clamp(24px,4vh,40px) 0 0; font-size:clamp(16px,1.3vw,19px); line-height:1.6; color:var(--ink-soft);">Acompaño a adolescentes, adultos, parejas y familias que buscan comprender qué les pasa. No se trata solamente de aliviar aquello que genera malestar, sino de poner en palabras lo que insiste, reconocer las repeticiones y construir otras formas de vincularse con la propia historia.</p>
         <div data-reveal="" style="display:flex; flex-wrap:wrap; align-items:center; gap:14px; margin-top:clamp(28px,4vh,40px);">
-          <a href="#contacto" class="h-dark" style="display:inline-flex; align-items:center; gap:9px; padding:14px 26px; border-radius:999px; background:var(--ink); color:var(--paper); font-size:14.5px;">Contame qué te pasa <span style="font-size:16px;">→</span></a>
+          <a href="${WA_LINK_TERAPIA}" target="_blank" rel="noopener" class="h-dark" style="display:inline-flex; align-items:center; gap:9px; padding:14px 26px; border-radius:999px; background:var(--ink); color:var(--paper); font-size:14.5px;">Contame qué te pasa <span style="font-size:16px;">→</span></a>
           <a href="https://instagram.com/psico.enraiz" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; font-size:14px; color:var(--ink-soft);"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.5"></rect><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"></circle><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"></circle></svg>@psico.enraiz</a>
         </div>
       </div>
       <!-- portrait -->
       <div data-reveal="" style="position:relative; align-self:stretch; min-height:clamp(380px,74vh,900px); display:flex; align-items:flex-end;">
         <div data-parallax="" style="position:relative; width:100%; height:clamp(380px,74vh,900px); border-radius:240px 240px 26px 26px; overflow:hidden; will-change:transform; border:1px solid var(--line); background:var(--bg-2);">
-          <img src="/assets/juli.jpg" alt="Lic. Juliana Nuñez Laya" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 30%;">
+          <img src="/assets/juli.jpg" alt="Lic. Juliana Núñez Laya" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 30%;">
           <div style="position:absolute; left:0; right:0; bottom:0; height:140px; background:linear-gradient(180deg, rgba(42,38,32,0), rgba(42,38,32,.42));"></div>
         </div>
       </div>
@@ -78,8 +92,8 @@ const MARKUP = `
     <!-- MARQUEE -->
     <div style="overflow:hidden; padding:clamp(22px,4vh,40px) 0; border-bottom:1px solid var(--line);">
       <div id="marquee" style="display:flex; width:max-content; will-change:transform;">
-        <span style="display:flex; align-items:center; font-family:'Cormorant Garamond'; font-style:italic; font-weight:300; font-size:clamp(30px,5vw,64px); color:var(--sage-deep); white-space:nowrap;">psicoterapia integrativa&nbsp;<span style="color:var(--terra);">·</span>&nbsp;vínculos&nbsp;<span style="color:var(--terra);">·</span>&nbsp;identidad&nbsp;<span style="color:var(--terra);">·</span>&nbsp;ansiedad&nbsp;<span style="color:var(--terra);">·</span>&nbsp;parejas&nbsp;<span style="color:var(--terra);">·</span>&nbsp;duelos&nbsp;<span style="color:var(--terra);">·</span>&nbsp;autoestima&nbsp;<span style="color:var(--terra);">·</span>&nbsp;</span>
-        <span aria-hidden="true" style="display:flex; align-items:center; font-family:'Cormorant Garamond'; font-style:italic; font-weight:300; font-size:clamp(30px,5vw,64px); color:var(--sage-deep); white-space:nowrap;">psicoterapia integrativa&nbsp;<span style="color:var(--terra);">·</span>&nbsp;vínculos&nbsp;<span style="color:var(--terra);">·</span>&nbsp;identidad&nbsp;<span style="color:var(--terra);">·</span>&nbsp;ansiedad&nbsp;<span style="color:var(--terra);">·</span>&nbsp;parejas&nbsp;<span style="color:var(--terra);">·</span>&nbsp;duelos&nbsp;<span style="color:var(--terra);">·</span>&nbsp;autoestima&nbsp;<span style="color:var(--terra);">·</span>&nbsp;</span>
+        <span style="display:flex; align-items:center; font-family:'Cormorant Garamond'; font-style:italic; font-weight:300; font-size:clamp(30px,5vw,64px); color:var(--sage-deep); white-space:nowrap;">psicología integrativa&nbsp;<span style="color:var(--terra);">·</span>&nbsp;vínculos&nbsp;<span style="color:var(--terra);">·</span>&nbsp;identidad&nbsp;<span style="color:var(--terra);">·</span>&nbsp;ansiedad&nbsp;<span style="color:var(--terra);">·</span>&nbsp;parejas&nbsp;<span style="color:var(--terra);">·</span>&nbsp;duelos&nbsp;<span style="color:var(--terra);">·</span>&nbsp;autoestima&nbsp;<span style="color:var(--terra);">·</span>&nbsp;</span>
+        <span aria-hidden="true" style="display:flex; align-items:center; font-family:'Cormorant Garamond'; font-style:italic; font-weight:300; font-size:clamp(30px,5vw,64px); color:var(--sage-deep); white-space:nowrap;">psicología integrativa&nbsp;<span style="color:var(--terra);">·</span>&nbsp;vínculos&nbsp;<span style="color:var(--terra);">·</span>&nbsp;identidad&nbsp;<span style="color:var(--terra);">·</span>&nbsp;ansiedad&nbsp;<span style="color:var(--terra);">·</span>&nbsp;parejas&nbsp;<span style="color:var(--terra);">·</span>&nbsp;duelos&nbsp;<span style="color:var(--terra);">·</span>&nbsp;autoestima&nbsp;<span style="color:var(--terra);">·</span>&nbsp;</span>
       </div>
     </div>
 
@@ -90,11 +104,11 @@ const MARKUP = `
         <h2 style="font-family:'Cormorant Garamond'; font-weight:400; font-size:clamp(38px,5vw,72px); line-height:1; letter-spacing:-.01em; margin:0; color:var(--ink);">Lo que <em style="color:var(--terra-deep);">angustia</em><br>también orienta.</h2>
       </div>
       <div style="max-width:52ch;">
-        <p data-reveal="" style="font-size:clamp(17px,1.4vw,21px); line-height:1.62; color:var(--ink-soft); margin:0 0 22px;">Trabajo desde un enfoque <strong style="font-weight: 500; color: var(--ink);">psicoanalítico </strong>con una mirada <b>integrativa</b>. Voy a la raíz de aquello que existe integrando herramientas contemporáneas: como por ejemplo la escritura terapéutica y/o la respiración consciente.</p>
-        <p data-reveal="" style="font-size:clamp(15px,1.2vw,17px); line-height:1.68; color:var(--ink-soft); margin:0 0 22px;">Escucha profunda y respeto por los tiempos subjetivos: cada historia merece ser leída con cuidado. No venís a que te diagnostique; venís a que algo que se repite o te causa malestar pueda, por fin, ponerse en palabras.</p>
+        <p data-reveal="" style="font-size:clamp(17px,1.4vw,21px); line-height:1.62; color:var(--ink-soft); margin:0 0 22px;">Trabajo desde un enfoque <strong style="font-weight: 500; color: var(--ink);">psicoanalítico </strong>con una mirada <b>integrativa</b>. Buscamos comprender aquello que insiste y produce malestar, incorporando, cuando cada proceso lo requiere, recursos como la escritura terapéutica, la respiración consciente y otras herramientas contemporáneas.</p>
+        <p data-reveal="" style="font-size:clamp(15px,1.2vw,17px); line-height:1.68; color:var(--ink-soft); margin:0 0 22px;">Cada historia merece ser escuchada con cuidado y respetando sus propios tiempos. No se trata de encasillarte en una definición, sino de construir un espacio donde aquello que se repite pueda ponerse en palabras y comenzar a adquirir otro sentido.</p>
         <p data-reveal="" style="font-family:'Cormorant Garamond'; font-style:italic; font-size:clamp(22px,2.4vw,30px); line-height:1.3; color:var(--forest); margin:34px 0 40px;">"Vincularnos también es un espejo de nuestra historia."</p>
         <div data-reveal="" style="padding-top:26px; border-top:1px solid var(--line);">
-          <div style="font-size:12.5px; color:var(--muted); letter-spacing:.02em;">Lic. Juliana Nuñez Laya · Psicóloga clínica</div>
+          <div style="font-size:12.5px; color:var(--muted); letter-spacing:.02em;">Lic. Juliana Núñez Laya · Psicóloga clínica</div>
         </div>
       </div>
     </section>
@@ -143,6 +157,34 @@ const MARKUP = `
             <p style="font-size:14px; line-height:1.62; color:var(--ink-soft); margin:0;">Comunicación, convivencia, deseos, distancias, separaciones y la pregunta de si el vínculo puede sostenerse.</p>
           </div>
         </div>
+        <div data-reveal="" class="h-spec" style="display:grid; grid-template-columns:auto 1fr; gap:clamp(16px,4vw,56px); padding:clamp(30px,4.5vh,52px) clamp(4px,1.4vw,20px); border-top:1px solid var(--line-strong); border-bottom:1px solid var(--line-strong); transition:background .35s ease, padding-left .35s ease;">
+          <span style="font-family:'Cormorant Garamond'; font-style:italic; font-size:clamp(24px,3vw,40px); color:var(--sage-deep); line-height:1;">04</span>
+          <div data-m="two" style="display:grid; grid-template-columns:1.05fr 1fr; gap:clamp(12px,3vw,48px); align-items:baseline;">
+            <div>
+              <h3 style="font-family:'Cormorant Garamond'; font-size:clamp(30px,3.4vw,50px); font-weight:500; margin:0 0 12px; color:var(--ink); line-height:1;">Familias y orientación a padres</h3>
+            </div>
+            <p style="font-size:14px; line-height:1.62; color:var(--ink-soft); margin:0;">Un espacio para pensar los vínculos familiares, las dificultades en la crianza y aquello que cada etapa moviliza. Acompañamiento para construir nuevas formas de escucha y encuentro.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUPERVISIÓN -->
+    <section id="supervision" style="padding:clamp(64px,12vh,150px) clamp(18px,4vw,56px);">
+      <div data-m="two" style="max-width:1160px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:clamp(28px,5vw,80px); align-items:center;">
+        <div data-reveal="">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:22px;"><span style="width:30px; height:1px; background:var(--muted);"></span><span style="font-size:11px; letter-spacing:.24em; text-transform:uppercase; color:var(--muted);">Para profesionales</span></div>
+          <h2 style="font-family:'Cormorant Garamond'; font-weight:400; font-size:clamp(36px,4.6vw,64px); line-height:1.04; letter-spacing:-.01em; margin:0;">La clínica también se piensa <em style="color:var(--terra-deep);">acompañada</em>.</h2>
+        </div>
+        <div data-reveal="" style="max-width:50ch;">
+          <p style="font-size:15px; line-height:1.65; color:var(--ink-soft); margin:0 0 18px;">Si estás dando tus primeros pasos en la clínica y aparecen dudas, inseguridades o preguntas frente a la escucha de un paciente, te ofrezco un espacio para pensarlas en compañía.</p>
+          <p style="font-size:15px; line-height:1.65; color:var(--ink-soft); margin:0 0 26px;">En las supervisiones trabajamos sobre casos clínicos, intervenciones, dificultades en la escucha y preguntas acerca de cómo orientar cada proceso. No se trata de encontrar respuestas cerradas, sino de construir una lectura posible y una posición clínica propia.</p>
+          <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:28px;">
+            <span style="display:inline-flex; align-items:center; padding:9px 16px; border-radius:999px; background:var(--paper); border:1px solid var(--line); font-size:13.5px; color:var(--ink-soft);">Supervisión individual</span>
+            <span style="display:inline-flex; align-items:center; padding:9px 16px; border-radius:999px; background:var(--paper); border:1px solid var(--line); font-size:13.5px; color:var(--ink-soft);">Supervisión grupal</span>
+          </div>
+          <a href="${WA_LINK_SUPERVISION}" target="_blank" rel="noopener" class="h-dark" style="display:inline-flex; align-items:center; gap:9px; padding:14px 26px; border-radius:999px; background:var(--forest); color:var(--paper); font-size:14.5px;">Consultar por supervisión <span style="font-size:16px;">→</span></a>
+        </div>
       </div>
     </section>
 
@@ -152,9 +194,9 @@ const MARKUP = `
         <div data-reveal="">
           <div style="display:flex; align-items:center; gap:12px; margin-bottom:24px;"><span style="width:32px; height:1px; background:rgba(248,243,233,.4);"></span><span style="font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--sage);">Para equipos, colegios e instituciones</span></div>
           <h2 style="font-family:'Cormorant Garamond'; font-weight:400; font-size:clamp(38px,5.4vw,78px); line-height:1; letter-spacing:-.015em; margin:0 0 24px; color:var(--paper);"><em style="color:var(--terra);">Charlas y talleres</em>, fuera del consultorio.</h2>
-          <p style="max-width:46ch; font-size:clamp(15px,1.3vw,18px); line-height:1.62; color:rgba(248,243,233,.82); margin:0 0 34px;">Brindo charlas y talleres para pensar juntos cuestiones de la actualidad, la identidad, los vínculos, la ansiedad y el bienestar. A&nbsp;la medida de tu grupo, sea un colegio, un equipo de trabajo o una comunidad.</p>
+          <p style="max-width:46ch; font-size:clamp(15px,1.3vw,18px); line-height:1.62; color:rgba(248,243,233,.82); margin:0 0 34px;">Diseño charlas y talleres para colegios, familias, equipos e instituciones. Cada propuesta se construye según las necesidades del grupo y busca abrir preguntas sobre los vínculos, la identidad, la salud mental y los desafíos de la vida contemporánea.</p>
           <div style="display:flex; flex-wrap:wrap; align-items:center; gap:18px;">
-            <a href="mailto:lic.juliana.nl@gmail.com?subject=Charla%20o%20taller" class="h-charla" style="display:inline-flex; align-items:center; gap:9px; padding:16px 32px; border-radius:999px; background:var(--paper); color:var(--forest); font-size:15px;">Invitame a hablar <span style="font-size:16px;">→</span></a>
+            <a href="mailto:lic.juliana.nl@gmail.com?subject=Charla%20o%20taller" class="h-charla" style="display:inline-flex; align-items:center; gap:9px; padding:16px 32px; border-radius:999px; background:var(--paper); color:var(--forest); font-size:15px;">Consultar por una propuesta <span style="font-size:16px;">→</span></a>
             <a href="https://www.linkedin.com/in/juliana-nu%C3%B1ez-laya-8b7451181/" target="_blank" rel="noopener" class="h-charla-link" style="font-size:14px; color:var(--paper); border-bottom:1px solid rgba(248,243,233,.4); padding-bottom:3px;">o escribime por LinkedIn</a>
           </div>
         </div>
@@ -184,16 +226,60 @@ const MARKUP = `
       </div>
     </section>
 
+    <!-- SESIONES -->
+    <section id="sesiones" style="padding:clamp(64px,12vh,150px) clamp(18px,4vw,56px);">
+      <div data-m="two" style="display:grid; grid-template-columns:.9fr 1.1fr; gap:clamp(28px,5vw,72px); align-items:start;">
+        <div data-reveal="">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:22px;"><span style="width:30px; height:1px; background:var(--muted);"></span><span style="font-size:11px; letter-spacing:.24em; text-transform:uppercase; color:var(--muted);">SESIONES</span></div>
+          <h2 style="font-family:'Cormorant Garamond'; font-weight:400; font-size:clamp(36px,4.6vw,64px); line-height:1; letter-spacing:-.01em; margin:0 0 22px;">Un espacio de <i style="color: #A87655">escucha</i>.</h2>
+          <p style="font-size:15px; line-height:1.65; color:var(--ink-soft); max-width:40ch; margin:0;">Las sesiones son virtuales, sin importar en qué lugar te encuentres. Trabajo con adolescentes, adultos, parejas y familias desde una escucha singular, respetando los tiempos y las necesidades de cada proceso.</p>
+        </div>
+        <div data-reveal="">
+          <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:28px;">
+            <span style="display:inline-flex; align-items:center; padding:9px 16px; border-radius:999px; background:var(--paper); border:1px solid var(--line); font-size:13.5px; color:var(--ink-soft);">Terapia individual</span>
+            <span style="display:inline-flex; align-items:center; padding:9px 16px; border-radius:999px; background:var(--paper); border:1px solid var(--line); font-size:13.5px; color:var(--ink-soft);">Terapia de pareja</span>
+            <span style="display:inline-flex; align-items:center; padding:9px 16px; border-radius:999px; background:var(--paper); border:1px solid var(--line); font-size:13.5px; color:var(--ink-soft);">Adolescentes</span>
+            <span style="display:inline-flex; align-items:center; padding:9px 16px; border-radius:999px; background:var(--paper); border:1px solid var(--line); font-size:13.5px; color:var(--ink-soft);">Familias y orientación a padres</span>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; align-items:center; gap:16px;">
+            <a href="${WA_LINK_TERAPIA}" target="_blank" rel="noopener" class="h-dark" style="display:inline-flex; align-items:center; gap:9px; padding:14px 26px; border-radius:999px; background:var(--ink); color:var(--paper); font-size:14.5px;">Consultar por WhatsApp <span style="font-size:16px;">→</span></a>
+            <a href="https://instagram.com/psico.enraiz" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; font-size:14px; color:var(--ink-soft);"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.5"></rect><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"></circle><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"></circle></svg>Escribirme por Instagram</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section id="sobre-mi" style="padding:clamp(64px,12vh,150px) clamp(18px,4vw,56px);">
+      <div data-m="two" style="display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(28px,5vw,72px); align-items:center;">
+        <div data-reveal="">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:22px;"><span style="width:30px; height:1px; background:var(--muted);"></span><span style="font-size:11px; letter-spacing:.24em; text-transform:uppercase; color:var(--muted);">Sobre mí</span></div>
+          <h2 style="font-family:'Cormorant Garamond'; font-weight:400; font-size:clamp(36px,4.6vw,64px); line-height:1.04; letter-spacing:-.01em; margin:0 0 24px;">Quién está detrás de la <em style="color:var(--terra-deep);">escucha</em>.</h2>
+          <p style="font-size:15px; line-height:1.65; color:var(--ink-soft); max-width:48ch; margin:0 0 18px;">Soy Juliana Núñez Laya, licenciada en Psicología. Trabajo desde una orientación psicoanalítica con una mirada integrativa y acompaño procesos individuales, de pareja y familiares.</p>
+          <p style="font-size:15px; line-height:1.65; color:var(--ink-soft); max-width:48ch; margin:0;">Me especialicé en psicoanálisis de parejas y familias y continúo formándome en clínica psicoanalítica de adultos. Concibo la terapia como un espacio de escucha, elaboración y encuentro con aquello que muchas veces se repite sin que podamos comprender por qué.</p>
+        </div>
+        <div data-reveal="">
+          <div id="sobreMiPhoto" style="position:relative; border-radius:24px; overflow:hidden; aspect-ratio:4/5; background:var(--bg-2); border:1px dashed var(--line-strong); display:flex; align-items:center; justify-content:center;">
+            <div style="text-align:center; color:var(--muted);">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" style="margin:0 auto 10px;"><rect x="3" y="6" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.4"></rect><circle cx="12" cy="13" r="3.4" stroke="currentColor" stroke-width="1.4"></circle><path d="M8 6l1.4-2.2h5.2L16 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              <div style="font-size:12.5px; letter-spacing:.04em;">Foto próximamente</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- CONTACTO -->
-    <section id="contacto" style="padding:clamp(64px,12vh,150px) clamp(18px,4vw,56px); background:var(--bg); color:var(--ink);">
-      <div style="text-align:center; max-width:900px; margin:0 auto;">
-        <div data-reveal="" style="display:inline-flex; align-items:center; gap:12px; margin-bottom:24px;"><span style="width:30px; height:1px; background:var(--line-strong);"></span><span style="font-size:11px; letter-spacing:.24em; text-transform:uppercase; color:var(--sage-deep);">Contacto</span><span style="width:30px; height:1px; background:var(--line-strong);"></span></div>
-        <h2 data-reveal="" style="font-family:'Cormorant Garamond'; font-weight:300; font-size:clamp(44px,7vw,96px); line-height:1; letter-spacing:-.015em; margin:0 0 20px; color:var(--ink);">Cuando quieras,<br>estoy <em style="color:var(--terra-deep);">del otro lado</em>.</h2>
-        <p data-reveal="" style="font-size:clamp(15px,1.3vw,18px); line-height:1.6; color:var(--ink-soft); max-width:46ch; margin:0 auto 44px;">Escribime y nos conocemos. Sin apuro: contame qué te trae y vemos cómo seguir.</p>
-        <div data-reveal="" data-m="three" style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px; max-width:720px; margin:0 auto;">
-          <a href="https://instagram.com/psico.enraiz" target="_blank" rel="noopener" class="h-card" style="display:flex; flex-direction:column; align-items:center; gap:12px; padding:26px 16px; border-radius:18px; background:var(--paper); border:1px solid var(--line); color:var(--ink);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.5"></rect><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"></circle><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"></circle></svg><span style="font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--sage-deep);">Instagram</span><span style="font-size:14px;">@psico.enraiz</span></a>
-          <a href="mailto:lic.juliana.nl@gmail.com" class="h-card" style="display:flex; flex-direction:column; align-items:center; gap:12px; padding:26px 16px; border-radius:18px; background:var(--paper); border:1px solid var(--line); color:var(--ink);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.5"></rect><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.5"></path></svg><span style="font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--sage-deep);">Email</span><span style="font-size:13px; word-break:break-all;">lic.juliana.nl@gmail.com</span></a>
-          <a href="https://www.linkedin.com/in/juliana-nu%C3%B1ez-laya-8b7451181/" target="_blank" rel="noopener" class="h-card" style="display:flex; flex-direction:column; align-items:center; gap:12px; padding:26px 16px; border-radius:18px; background:var(--paper); border:1px solid var(--line); color:var(--ink);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.5"></rect><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 014 0v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg><span style="font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--sage-deep);">LinkedIn</span><span style="font-size:14px;">Juliana Nuñez Laya</span></a>
+    <section id="contacto" style="padding:clamp(64px,12vh,150px) clamp(18px,4vw,56px); background:var(--forest); color:var(--paper);">
+      <div style="text-align:center; max-width:960px; margin:0 auto;">
+        <div data-reveal="" style="display:inline-flex; align-items:center; gap:12px; margin-bottom:24px;"><span style="width:30px; height:1px; background:rgba(248,243,233,.4);"></span><span style="font-size:11px; letter-spacing:.24em; text-transform:uppercase; color:var(--sage);">Contacto</span><span style="width:30px; height:1px; background:rgba(248,243,233,.4);"></span></div>
+        <h2 data-reveal="" style="font-family:'Cormorant Garamond'; font-weight:300; font-size:clamp(44px,7vw,96px); line-height:1; letter-spacing:-.015em; margin:0 0 20px;">Cuando quieras,<br>estoy <em style="color:var(--terra);">del otro lado</em>.</h2>
+        <p data-reveal="" style="font-size:clamp(15px,1.3vw,18px); line-height:1.6; color:rgba(248,243,233,.72); max-width:46ch; margin:0 auto 44px;">Si algo de lo que leíste resonó con vos, podés escribirme. Contame brevemente qué te trae y vemos cómo seguir.</p>
+        <div data-reveal="" data-m="four" style="display:grid; grid-template-columns:repeat(4,1fr); gap:14px; max-width:900px; margin:0 auto;">
+          <a href="${WA_LINK_TERAPIA}" target="_blank" rel="noopener" class="h-card" style="display:flex; flex-direction:column; align-items:center; gap:12px; padding:26px 16px; border-radius:18px; background:rgba(248,243,233,.06); border:1px solid rgba(248,243,233,.16); color:var(--paper);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3a9 9 0 00-7.86 13.4L3 21l4.75-1.11A9 9 0 1012 3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path><path d="M8.7 9.6c0 3.1 2.6 5.7 5.7 5.9l1.15-1.35c.14-.17.09-.43-.1-.53l-1.55-.78c-.15-.08-.33-.05-.44.08l-.48.53a4.6 4.6 0 01-2.05-2.05l.53-.48c.13-.11.16-.29.08-.44l-.78-1.55c-.1-.19-.36-.24-.53-.1L9.9 9.98" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path></svg><span style="font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--sage);">WhatsApp</span><span style="font-size:14px;">+54 9 11 5939-6866</span></a>
+          <a href="https://instagram.com/psico.enraiz" target="_blank" rel="noopener" class="h-card" style="display:flex; flex-direction:column; align-items:center; gap:12px; padding:26px 16px; border-radius:18px; background:rgba(248,243,233,.06); border:1px solid rgba(248,243,233,.16); color:var(--paper);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.5"></rect><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"></circle><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"></circle></svg><span style="font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--sage);">Instagram</span><span style="font-size:14px;">@psico.enraiz</span></a>
+          <a href="mailto:lic.juliana.nl@gmail.com" class="h-card" style="display:flex; flex-direction:column; align-items:center; gap:12px; padding:26px 16px; border-radius:18px; background:rgba(248,243,233,.06); border:1px solid rgba(248,243,233,.16); color:var(--paper);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.5"></rect><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.5"></path></svg><span style="font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--sage);">Email</span><span style="font-size:13px; word-break:break-all;">lic.juliana.nl@gmail.com</span></a>
+          <a href="https://www.linkedin.com/in/juliana-nu%C3%B1ez-laya-8b7451181/" target="_blank" rel="noopener" class="h-card" style="display:flex; flex-direction:column; align-items:center; gap:12px; padding:26px 16px; border-radius:18px; background:rgba(248,243,233,.06); border:1px solid rgba(248,243,233,.16); color:var(--paper);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.5"></rect><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 014 0v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg><span style="font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--sage);">LinkedIn</span><span style="font-size:14px;">Juliana Núñez Laya</span></a>
         </div>
       </div>
     </section>
@@ -203,13 +289,13 @@ const MARKUP = `
       <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:30px; flex-wrap:wrap; padding-bottom:36px; border-bottom:1px solid var(--line);">
         <div style="font-family:'Cormorant Garamond'; font-size:clamp(30px,4vw,52px); line-height:1; color:var(--ink);">Volver a la <em style="color:var(--terra-deep);">raíz</em>.</div>
         <div style="display:flex; gap:clamp(24px,4vw,56px); flex-wrap:wrap; font-size:13.5px;">
-          <div style="display:flex; flex-direction:column; gap:9px;"><span style="font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted);">Secciones</span><a href="#enfoque" style="color:var(--ink-soft);">Enfoque</a><a href="#especialidades" style="color:var(--ink-soft);">Especialidades</a><a href="#charlas" style="color:var(--ink-soft);">Charlas</a></div>
-          <div style="display:flex; flex-direction:column; gap:9px;"><span style="font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted);">Encontrame</span><a href="https://instagram.com/psico.enraiz" target="_blank" rel="noopener" style="color:var(--ink-soft);">Instagram</a><a href="mailto:lic.juliana.nl@gmail.com" style="color:var(--ink-soft);">Email</a><a href="https://www.linkedin.com/in/juliana-nu%C3%B1ez-laya-8b7451181/" target="_blank" rel="noopener" style="color:var(--ink-soft);">LinkedIn</a></div>
+          <div style="display:flex; flex-direction:column; gap:9px;"><span style="font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted);">Secciones</span><a href="#enfoque" style="color:var(--ink-soft);">Enfoque</a><a href="#especialidades" style="color:var(--ink-soft);">Especialidades</a><a href="#supervision" style="color:var(--ink-soft);">Supervisión</a><a href="#charlas" style="color:var(--ink-soft);">Charlas</a><a href="#sesiones" style="color:var(--ink-soft);">Sesiones</a></div>
+          <div style="display:flex; flex-direction:column; gap:9px;"><span style="font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted);">Encontrame</span><a href="https://wa.me/${WA_NUMBER}" target="_blank" rel="noopener" style="color:var(--ink-soft);">WhatsApp</a><a href="https://instagram.com/psico.enraiz" target="_blank" rel="noopener" style="color:var(--ink-soft);">Instagram</a><a href="mailto:lic.juliana.nl@gmail.com" style="color:var(--ink-soft);">Email</a><a href="https://www.linkedin.com/in/juliana-nu%C3%B1ez-laya-8b7451181/" target="_blank" rel="noopener" style="color:var(--ink-soft);">LinkedIn</a></div>
         </div>
       </div>
       <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; padding-top:22px; font-size:12px; color:var(--muted);">
-        <span>© 2026 Lic. Juliana Nuñez Laya · Modalidad online</span>
-        <span>Psicoterapia integrativa · CABA, Argentina</span>
+        <span>© 2026 Lic. Juliana Núñez Laya · Modalidad online</span>
+        <span>Psicología integrativa · CABA, Argentina</span>
       </div>
     </footer>
   </main>
