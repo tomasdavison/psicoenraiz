@@ -170,7 +170,7 @@ const MARKUP = `
     </section>
 
     <!-- SUPERVISIÓN -->
-    <section id="supervision" style="padding:clamp(64px,12vh,150px) clamp(18px,4vw,56px);">
+    <section id="supervision" style="padding:clamp(64px,12vh,150px) clamp(18px,4vw,56px); background:var(--bg-2); border-top:1px solid var(--line);">
       <div data-m="two" style="max-width:1160px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:clamp(28px,5vw,80px); align-items:center;">
         <div data-reveal="">
           <div style="display:flex; align-items:center; gap:12px; margin-bottom:22px;"><span style="width:30px; height:1px; background:var(--muted);"></span><span style="font-size:11px; letter-spacing:.24em; text-transform:uppercase; color:var(--muted);">Para profesionales</span></div>
@@ -179,9 +179,12 @@ const MARKUP = `
         <div data-reveal="" style="max-width:50ch;">
           <p style="font-size:15px; line-height:1.65; color:var(--ink-soft); margin:0 0 18px;">Si estás dando tus primeros pasos en la clínica y aparecen dudas, inseguridades o preguntas frente a la escucha de un paciente, te ofrezco un espacio para pensarlas en compañía.</p>
           <p style="font-size:15px; line-height:1.65; color:var(--ink-soft); margin:0 0 26px;">En las supervisiones trabajamos sobre casos clínicos, intervenciones, dificultades en la escucha y preguntas acerca de cómo orientar cada proceso. No se trata de encontrar respuestas cerradas, sino de construir una lectura posible y una posición clínica propia.</p>
-          <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:28px;">
-            <span style="display:inline-flex; align-items:center; padding:9px 16px; border-radius:999px; background:var(--paper); border:1px solid var(--line); font-size:13.5px; color:var(--ink-soft);">Supervisión individual</span>
-            <span style="display:inline-flex; align-items:center; padding:9px 16px; border-radius:999px; background:var(--paper); border:1px solid var(--line); font-size:13.5px; color:var(--ink-soft);">Supervisión grupal</span>
+          <div style="padding:clamp(20px,2.4vw,26px); border-radius:18px; background:var(--paper); border:1px solid var(--line); margin-bottom:24px;">
+            <div style="font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); margin-bottom:14px;">Modalidades</div>
+            <div style="display:flex; flex-wrap:wrap; gap:10px;">
+              <span style="display:inline-flex; align-items:center; padding:9px 16px; border-radius:999px; background:var(--bg); border:1px solid var(--line); font-size:13.5px; color:var(--ink-soft);">Supervisión individual</span>
+              <span style="display:inline-flex; align-items:center; padding:9px 16px; border-radius:999px; background:var(--bg); border:1px solid var(--line); font-size:13.5px; color:var(--ink-soft);">Supervisión grupal</span>
+            </div>
           </div>
           <a href="${WA_LINK_SUPERVISION}" target="_blank" rel="noopener" class="h-dark" style="display:inline-flex; align-items:center; gap:9px; padding:14px 26px; border-radius:999px; background:var(--forest); color:var(--paper); font-size:14.5px;">Consultar por supervisión <span style="font-size:16px;">→</span></a>
         </div>
@@ -235,11 +238,14 @@ const MARKUP = `
           <p style="font-size:15px; line-height:1.65; color:var(--ink-soft); max-width:40ch; margin:0;">Las sesiones son virtuales, sin importar en qué lugar te encuentres. Trabajo con adolescentes, adultos, parejas y familias desde una escucha singular, respetando los tiempos y las necesidades de cada proceso.</p>
         </div>
         <div data-reveal="">
-          <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:28px;">
-            <span style="display:inline-flex; align-items:center; padding:9px 16px; border-radius:999px; background:var(--paper); border:1px solid var(--line); font-size:13.5px; color:var(--ink-soft);">Terapia individual</span>
-            <span style="display:inline-flex; align-items:center; padding:9px 16px; border-radius:999px; background:var(--paper); border:1px solid var(--line); font-size:13.5px; color:var(--ink-soft);">Terapia de pareja</span>
-            <span style="display:inline-flex; align-items:center; padding:9px 16px; border-radius:999px; background:var(--paper); border:1px solid var(--line); font-size:13.5px; color:var(--ink-soft);">Adolescentes</span>
-            <span style="display:inline-flex; align-items:center; padding:9px 16px; border-radius:999px; background:var(--paper); border:1px solid var(--line); font-size:13.5px; color:var(--ink-soft);">Familias y orientación a padres</span>
+          <div style="padding:clamp(24px,2.6vw,30px); border-radius:20px; background:var(--paper); border:1px solid var(--line); margin-bottom:24px;">
+            <div style="font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); margin-bottom:16px;">Modalidades</div>
+            <div style="display:flex; flex-wrap:wrap; gap:10px;">
+              <span style="display:inline-flex; align-items:center; padding:9px 16px; border-radius:999px; background:var(--bg); border:1px solid var(--line); font-size:13.5px; color:var(--ink-soft);">Terapia individual</span>
+              <span style="display:inline-flex; align-items:center; padding:9px 16px; border-radius:999px; background:var(--bg); border:1px solid var(--line); font-size:13.5px; color:var(--ink-soft);">Terapia de pareja</span>
+              <span style="display:inline-flex; align-items:center; padding:9px 16px; border-radius:999px; background:var(--bg); border:1px solid var(--line); font-size:13.5px; color:var(--ink-soft);">Adolescentes</span>
+              <span style="display:inline-flex; align-items:center; padding:9px 16px; border-radius:999px; background:var(--bg); border:1px solid var(--line); font-size:13.5px; color:var(--ink-soft);">Familias y orientación a padres</span>
+            </div>
           </div>
           <div style="display:flex; flex-wrap:wrap; align-items:center; gap:16px;">
             <a href="${WA_LINK_TERAPIA}" target="_blank" rel="noopener" class="h-dark" style="display:inline-flex; align-items:center; gap:9px; padding:14px 26px; border-radius:999px; background:var(--ink); color:var(--paper); font-size:14.5px;">Consultar por WhatsApp <span style="font-size:16px;">→</span></a>
@@ -250,7 +256,7 @@ const MARKUP = `
     </section>
 
     <!-- SOBRE MÍ -->
-    <section id="sobre-mi" style="padding:clamp(64px,12vh,150px) clamp(18px,4vw,56px);">
+    <section id="sobre-mi" style="padding:clamp(64px,12vh,150px) clamp(18px,4vw,56px); background:var(--paper); border-top:1px solid var(--line);">
       <div data-m="two" style="display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(28px,5vw,72px); align-items:center;">
         <div data-reveal="">
           <div style="display:flex; align-items:center; gap:12px; margin-bottom:22px;"><span style="width:30px; height:1px; background:var(--muted);"></span><span style="font-size:11px; letter-spacing:.24em; text-transform:uppercase; color:var(--muted);">Sobre mí</span></div>
