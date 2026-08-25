@@ -30,9 +30,6 @@ em,i{ font-style:italic; }
   [data-m~="specb"]{ grid-template-columns:auto 1fr !important; }
   [data-specmeta]{ display:none !important; }
 }
-@media (max-width:540px){
-  [data-m~="pricecards"]{ grid-template-columns:1fr !important; }
-}
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior:auto; }
   *{ animation-duration:.01ms !important; animation-iteration-count:1 !important; }
@@ -72,6 +69,6 @@ em,i{ font-style:italic; }
 
 .h-card{ transition:background .3s ease, border-color .3s ease; }
 .h-card:hover{
-  background:rgba(248,243,233,.14) !important;
-  border-color:rgba(248,243,233,.3) !important;
+  background:var(--bg-2) !important;
+  border-color:var(--line-strong) !important;
 }
