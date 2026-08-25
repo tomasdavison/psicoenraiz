@@ -26,7 +26,6 @@ const MARKUP = `
       <a href="#enfoque" style="color:var(--ink-soft);">Enfoque</a>
       <a href="#especialidades" style="color:var(--ink-soft);">Especialidades</a>
       <a href="#charlas" style="color:var(--ink-soft);">Charlas</a>
-      <a href="#inversion" style="color:var(--ink-soft);">Sesiones</a>
       <a href="#contacto" class="h-dark" style="display:inline-flex; align-items:center; gap:7px; padding:9px 18px; border-radius:999px; background:var(--ink); color:var(--paper);">Escribime</a>
     </div>
     <button id="burger" data-burger="" style="display:none; align-items:center; justify-content:center; width:44px; height:44px; border:1px solid var(--line-strong); border-radius:999px; background:rgba(248,243,233,.6); color:var(--ink); cursor:pointer;">
@@ -40,7 +39,6 @@ const MARKUP = `
     <a href="#enfoque" class="mm-link" style="font-family:'Cormorant Garamond'; font-size:38px; color:var(--ink); padding:8px 0;">Enfoque</a>
     <a href="#especialidades" class="mm-link" style="font-family:'Cormorant Garamond'; font-size:38px; color:var(--ink); padding:8px 0;">Especialidades</a>
     <a href="#charlas" class="mm-link" style="font-family:'Cormorant Garamond'; font-size:38px; color:var(--ink); padding:8px 0;">Charlas y talleres</a>
-    <a href="#inversion" class="mm-link" style="font-family:'Cormorant Garamond'; font-size:38px; color:var(--ink); padding:8px 0;">Inversión</a>
     <a href="#contacto" class="mm-link" style="font-family:'Cormorant Garamond'; font-size:38px; color:var(--terra-deep); padding:8px 0;"><em>Escribime</em></a>
   </div>
 
@@ -186,41 +184,16 @@ const MARKUP = `
       </div>
     </section>
 
-    <!-- INVERSIÓN -->
-    <section id="inversion" style="padding:clamp(64px,12vh,150px) clamp(18px,4vw,56px);">
-      <div data-m="two" style="display:grid; grid-template-columns:.9fr 1.1fr; gap:clamp(28px,5vw,72px); align-items:start;">
-        <div data-reveal="">
-          <div style="display:flex; align-items:center; gap:12px; margin-bottom:22px;"><span style="width:30px; height:1px; background:var(--muted);"></span><span style="font-size:11px; letter-spacing:.24em; text-transform:uppercase; color:var(--muted);">SESIONES</span></div>
-          <h2 style="font-family:'Cormorant Garamond'; font-weight:400; font-size:clamp(36px,4.6vw,64px); line-height:1; letter-spacing:-.01em; margin:0 0 22px;">Un espacio de <i style="color: #A87655">escucha</i>.</h2>
-          <p style="font-size:15px; line-height:1.65; color:var(--ink-soft); max-width:40ch; margin:0 0 24px;">Todas las sesiones son virtuales sin importar en qué parte del mundo estés.</p>
-        </div>
-        <div>
-          <div data-reveal="" data-m="pricecards" style="display:grid; grid-template-columns:1fr 1fr; gap:clamp(14px,1.6vw,20px);">
-            <div style="padding:clamp(26px,3vw,38px); border-radius:20px; background:var(--paper); border:1px solid var(--line);">
-              <div style="font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); margin-bottom:14px;">Sesión individual</div>
-              <div style="font-family:'Cormorant Garamond'; font-size:clamp(40px,5vw,60px); line-height:1; color:var(--ink);"><span data-price="" id="priceInd">$45.000</span></div>
-            </div>
-            <div style="padding:clamp(26px,3vw,38px); border-radius:20px; background:var(--forest); color:var(--paper); border:1px solid var(--forest);">
-              <div style="font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--sage); margin-bottom:14px;">Sesión de pareja</div>
-              <div style="font-family:'Cormorant Garamond'; font-size:clamp(40px,5vw,60px); line-height:1;"><span data-price="" id="priceCouple">$65.000</span></div>
-            </div>
-          </div>
-          <p id="noteAR" data-reveal="" style="margin:22px 0 0; font-size:13px; line-height:1.6; color:var(--ink-soft); padding:16px 20px; border-radius:14px; background:var(--bg-2);">Pagás por <strong style="font-weight:500;">transferencia</strong> o <strong style="font-weight:500;">MercadoPago</strong>. Se emite factura para reintegro de obra social o prepaga.</p>
-          <p id="noteEXT" data-reveal="" style="display:none; margin:22px 0 0; font-size:13px; line-height:1.6; color:var(--ink-soft); padding:16px 20px; border-radius:14px; background:var(--bg-2);">Desde el exterior coordinamos el medio de pago internacional al momento de agendar. Sesiones 100% online.</p>
-        </div>
-      </div>
-    </section>
-
     <!-- CONTACTO -->
-    <section id="contacto" style="padding:clamp(64px,12vh,150px) clamp(18px,4vw,56px); background:var(--forest); color:var(--paper);">
+    <section id="contacto" style="padding:clamp(64px,12vh,150px) clamp(18px,4vw,56px); background:var(--bg); color:var(--ink);">
       <div style="text-align:center; max-width:900px; margin:0 auto;">
-        <div data-reveal="" style="display:inline-flex; align-items:center; gap:12px; margin-bottom:24px;"><span style="width:30px; height:1px; background:rgba(248,243,233,.4);"></span><span style="font-size:11px; letter-spacing:.24em; text-transform:uppercase; color:var(--sage);">Contacto</span><span style="width:30px; height:1px; background:rgba(248,243,233,.4);"></span></div>
-        <h2 data-reveal="" style="font-family:'Cormorant Garamond'; font-weight:300; font-size:clamp(44px,7vw,96px); line-height:1; letter-spacing:-.015em; margin:0 0 20px;">Cuando quieras,<br>estoy <em style="color:var(--terra);">del otro lado</em>.</h2>
-        <p data-reveal="" style="font-size:clamp(15px,1.3vw,18px); line-height:1.6; color:rgba(248,243,233,.72); max-width:46ch; margin:0 auto 44px;">Escribime y nos conocemos. Sin apuro: contame qué te trae y vemos cómo seguir.</p>
+        <div data-reveal="" style="display:inline-flex; align-items:center; gap:12px; margin-bottom:24px;"><span style="width:30px; height:1px; background:var(--line-strong);"></span><span style="font-size:11px; letter-spacing:.24em; text-transform:uppercase; color:var(--sage-deep);">Contacto</span><span style="width:30px; height:1px; background:var(--line-strong);"></span></div>
+        <h2 data-reveal="" style="font-family:'Cormorant Garamond'; font-weight:300; font-size:clamp(44px,7vw,96px); line-height:1; letter-spacing:-.015em; margin:0 0 20px; color:var(--ink);">Cuando quieras,<br>estoy <em style="color:var(--terra-deep);">del otro lado</em>.</h2>
+        <p data-reveal="" style="font-size:clamp(15px,1.3vw,18px); line-height:1.6; color:var(--ink-soft); max-width:46ch; margin:0 auto 44px;">Escribime y nos conocemos. Sin apuro: contame qué te trae y vemos cómo seguir.</p>
         <div data-reveal="" data-m="three" style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px; max-width:720px; margin:0 auto;">
-          <a href="https://instagram.com/psico.enraiz" target="_blank" rel="noopener" class="h-card" style="display:flex; flex-direction:column; align-items:center; gap:12px; padding:26px 16px; border-radius:18px; background:rgba(248,243,233,.06); border:1px solid rgba(248,243,233,.16); color:var(--paper);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.5"></rect><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"></circle><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"></circle></svg><span style="font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--sage);">Instagram</span><span style="font-size:14px;">@psico.enraiz</span></a>
-          <a href="mailto:lic.juliana.nl@gmail.com" class="h-card" style="display:flex; flex-direction:column; align-items:center; gap:12px; padding:26px 16px; border-radius:18px; background:rgba(248,243,233,.06); border:1px solid rgba(248,243,233,.16); color:var(--paper);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.5"></rect><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.5"></path></svg><span style="font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--sage);">Email</span><span style="font-size:13px; word-break:break-all;">lic.juliana.nl@gmail.com</span></a>
-          <a href="https://www.linkedin.com/in/juliana-nu%C3%B1ez-laya-8b7451181/" target="_blank" rel="noopener" class="h-card" style="display:flex; flex-direction:column; align-items:center; gap:12px; padding:26px 16px; border-radius:18px; background:rgba(248,243,233,.06); border:1px solid rgba(248,243,233,.16); color:var(--paper);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.5"></rect><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 014 0v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg><span style="font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--sage);">LinkedIn</span><span style="font-size:14px;">Juliana Nuñez Laya</span></a>
+          <a href="https://instagram.com/psico.enraiz" target="_blank" rel="noopener" class="h-card" style="display:flex; flex-direction:column; align-items:center; gap:12px; padding:26px 16px; border-radius:18px; background:var(--paper); border:1px solid var(--line); color:var(--ink);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.5"></rect><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"></circle><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"></circle></svg><span style="font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--sage-deep);">Instagram</span><span style="font-size:14px;">@psico.enraiz</span></a>
+          <a href="mailto:lic.juliana.nl@gmail.com" class="h-card" style="display:flex; flex-direction:column; align-items:center; gap:12px; padding:26px 16px; border-radius:18px; background:var(--paper); border:1px solid var(--line); color:var(--ink);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.5"></rect><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.5"></path></svg><span style="font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--sage-deep);">Email</span><span style="font-size:13px; word-break:break-all;">lic.juliana.nl@gmail.com</span></a>
+          <a href="https://www.linkedin.com/in/juliana-nu%C3%B1ez-laya-8b7451181/" target="_blank" rel="noopener" class="h-card" style="display:flex; flex-direction:column; align-items:center; gap:12px; padding:26px 16px; border-radius:18px; background:var(--paper); border:1px solid var(--line); color:var(--ink);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.5"></rect><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 014 0v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg><span style="font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--sage-deep);">LinkedIn</span><span style="font-size:14px;">Juliana Nuñez Laya</span></a>
         </div>
       </div>
     </section>
@@ -230,7 +203,7 @@ const MARKUP = `
       <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:30px; flex-wrap:wrap; padding-bottom:36px; border-bottom:1px solid var(--line);">
         <div style="font-family:'Cormorant Garamond'; font-size:clamp(30px,4vw,52px); line-height:1; color:var(--ink);">Volver a la <em style="color:var(--terra-deep);">raíz</em>.</div>
         <div style="display:flex; gap:clamp(24px,4vw,56px); flex-wrap:wrap; font-size:13.5px;">
-          <div style="display:flex; flex-direction:column; gap:9px;"><span style="font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted);">Secciones</span><a href="#enfoque" style="color:var(--ink-soft);">Enfoque</a><a href="#especialidades" style="color:var(--ink-soft);">Especialidades</a><a href="#charlas" style="color:var(--ink-soft);">Charlas</a><a href="#inversion" style="color:var(--ink-soft);">Inversión</a></div>
+          <div style="display:flex; flex-direction:column; gap:9px;"><span style="font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted);">Secciones</span><a href="#enfoque" style="color:var(--ink-soft);">Enfoque</a><a href="#especialidades" style="color:var(--ink-soft);">Especialidades</a><a href="#charlas" style="color:var(--ink-soft);">Charlas</a></div>
           <div style="display:flex; flex-direction:column; gap:9px;"><span style="font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted);">Encontrame</span><a href="https://instagram.com/psico.enraiz" target="_blank" rel="noopener" style="color:var(--ink-soft);">Instagram</a><a href="mailto:lic.juliana.nl@gmail.com" style="color:var(--ink-soft);">Email</a><a href="https://www.linkedin.com/in/juliana-nu%C3%B1ez-laya-8b7451181/" target="_blank" rel="noopener" style="color:var(--ink-soft);">LinkedIn</a></div>
         </div>
       </div>
@@ -262,25 +235,6 @@ export default function PsicoEnraiz() {
     let paraEls = null;
     let mqTween = null;
     let bgResize = null;
-
-    // ---------- región (auto-detección por zona horaria) ----------
-    (function detectRegion() {
-      let ar = true;
-      try {
-        const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
-        ar = /America\/Argentina/i.test(tz);
-      } catch (e) {
-        /* keep default */
-      }
-      const pi = document.getElementById("priceInd");
-      const pc = document.getElementById("priceCouple");
-      const nAR = document.getElementById("noteAR");
-      const nEXT = document.getElementById("noteEXT");
-      if (pi) pi.textContent = ar ? "$45.000" : "USD 45";
-      if (pc) pc.textContent = ar ? "$65.000" : "USD 65";
-      if (nAR) nAR.style.display = ar ? "" : "none";
-      if (nEXT) nEXT.style.display = ar ? "none" : "";
-    })();
 
     // ---------- menú mobile ----------
     const burger = document.getElementById("burger");
