@@ -1,0 +1,4 @@
+interface:
+  display_name: "Modificar Psico.enraiz"
+  short_description: "Editar, previsualizar y publicar Psico.enraiz"
+  default_prompt: "Usá $modify-website para hacer este cambio en mi página web y mostrármelo antes de publicarlo."
