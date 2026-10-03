@@ -17,6 +17,7 @@ body{
 a{ color:var(--terra-deep); text-decoration:none; }
 a:hover{ color:var(--ink); }
 em,i{ font-style:italic; }
+#scope p strong{ font-weight:600; }
 ::selection{ background:var(--sage); color:var(--forest); }
 @keyframes enraiz-marquee{ from{transform:translate3d(0,0,0)} to{transform:translate3d(-50%,0,0)} }
 
