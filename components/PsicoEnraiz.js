@@ -68,7 +68,7 @@ const MARKUP = `
           <span style="display:block; overflow:hidden;"><span data-line="" style="display:block;">de lo que <em style="color:var(--terra-deep);">duele</em></span></span>
           <span style="display:block; overflow:hidden;"><span data-line="" style="display:block;">e <em style="color:var(--terra-deep);">insiste</em>.</span></span>
         </h1>
-        <p data-reveal="" style="max-width:44ch; margin:clamp(24px,4vh,40px) 0 0; font-size:clamp(16px,1.3vw,19px); line-height:1.6; color:var(--ink-soft);">Acompaño a adolescentes, adultos, parejas y familias que buscan comprender qué les pasa. No se trata solamente de aliviar aquello que genera malestar, sino de poner en palabras lo que insiste, reconocer las repeticiones y construir otras formas de vincularse con la propia historia.</p>
+        <p data-reveal="" style="max-width:44ch; margin:clamp(24px,4vh,40px) 0 0; font-size:clamp(16px,1.3vw,19px); line-height:1.6; color:var(--ink-soft);">Acompaño a <strong>adolescentes, adultos, parejas y familias</strong> que buscan comprender qué les pasa. No se trata solamente de aliviar aquello que genera malestar, sino de poner en palabras lo que insiste, reconocer las repeticiones y <strong>construir otras formas de vincularse</strong> con la propia historia.</p>
         <div data-reveal="" style="display:flex; flex-wrap:wrap; align-items:center; gap:14px; margin-top:clamp(28px,4vh,40px);">
           <a href="${WA_LINK_TERAPIA}" target="_blank" rel="noopener" class="h-dark" style="display:inline-flex; align-items:center; gap:9px; padding:14px 26px; border-radius:999px; background:var(--ink); color:var(--paper); font-size:14.5px;">Contame qué te pasa <span style="font-size:16px;">→</span></a>
           <a href="https://instagram.com/psico.enraiz" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; font-size:14px; color:var(--ink-soft);"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.5"></rect><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"></circle><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"></circle></svg>@psico.enraiz</a>
@@ -104,8 +104,8 @@ const MARKUP = `
         <h2 style="font-family:'Cormorant Garamond'; font-weight:400; font-size:clamp(38px,5vw,72px); line-height:1; letter-spacing:-.01em; margin:0; color:var(--ink);">Lo que <em style="color:var(--terra-deep);">angustia</em><br>también orienta.</h2>
       </div>
       <div style="max-width:52ch;">
-        <p data-reveal="" style="font-size:clamp(17px,1.4vw,21px); line-height:1.62; color:var(--ink-soft); margin:0 0 22px;">Trabajo desde un enfoque <strong style="font-weight: 500; color: var(--ink);">psicoanalítico </strong>con una mirada <b>integrativa</b>. Buscamos comprender aquello que insiste y produce malestar, incorporando, cuando cada proceso lo requiere, recursos como la escritura terapéutica, la respiración consciente y otras herramientas contemporáneas.</p>
-        <p data-reveal="" style="font-size:clamp(15px,1.2vw,17px); line-height:1.68; color:var(--ink-soft); margin:0 0 22px;">Cada historia merece ser escuchada con cuidado y respetando sus propios tiempos. No se trata de encasillarte en una definición, sino de construir un espacio donde aquello que se repite pueda ponerse en palabras y comenzar a adquirir otro sentido.</p>
+        <p data-reveal="" style="font-size:clamp(17px,1.4vw,21px); line-height:1.62; color:var(--ink-soft); margin:0 0 22px;">Trabajo desde un enfoque <strong>psicoanalítico</strong> con una mirada <strong>integrativa</strong>. Buscamos <strong>comprender aquello que insiste y produce malestar</strong>, incorporando, cuando cada proceso lo requiere, recursos como la escritura terapéutica, la respiración consciente y otras herramientas contemporáneas.</p>
+        <p data-reveal="" style="font-size:clamp(15px,1.2vw,17px); line-height:1.68; color:var(--ink-soft); margin:0 0 22px;">Cada historia merece ser escuchada con cuidado y <strong>respetando sus propios tiempos</strong>. No se trata de encasillarte en una definición, sino de construir un espacio donde aquello que se repite pueda <strong>ponerse en palabras</strong> y comenzar a adquirir otro sentido.</p>
         <p data-reveal="" style="font-family:'Cormorant Garamond'; font-style:italic; font-size:clamp(22px,2.4vw,30px); line-height:1.3; color:var(--forest); margin:34px 0 40px;">"Vincularnos también es un espejo de nuestra historia."</p>
         <div data-reveal="" style="padding-top:26px; border-top:1px solid var(--line);">
           <div style="font-size:12.5px; color:var(--muted); letter-spacing:.02em;">Lic. Juliana Núñez Laya · Psicóloga clínica</div>
@@ -136,7 +136,7 @@ const MARKUP = `
             <div>
               <h3 style="font-family:'Cormorant Garamond'; font-size:clamp(30px,3.4vw,50px); font-weight:500; margin:0 0 12px; color:var(--ink); line-height:1;">Adolescentes</h3>
             </div>
-            <p style="font-size:14px; line-height:1.62; color:var(--ink-soft); margin:0;">Un espacio para construir identidad, sostener los vínculos y darle lugar a la ansiedad propia de esta etapa.</p>
+            <p style="font-size:14px; line-height:1.62; color:var(--ink-soft); margin:0;">Un espacio para <strong>construir identidad</strong>, sostener los vínculos y darle lugar a la <strong>ansiedad propia de esta etapa</strong>.</p>
           </div>
         </div>
         <div data-reveal="" class="h-spec" style="display:grid; grid-template-columns:auto 1fr; gap:clamp(16px,4vw,56px); padding:clamp(30px,4.5vh,52px) clamp(4px,1.4vw,20px); border-top:1px solid var(--line-strong); transition:background .35s ease, padding-left .35s ease;">
@@ -145,7 +145,7 @@ const MARKUP = `
             <div>
               <h3 style="font-family:'Cormorant Garamond'; font-size:clamp(30px,3.4vw,50px); font-weight:500; margin:0 0 12px; color:var(--ink); line-height:1;">Adultos</h3>
             </div>
-            <p style="font-size:14px; line-height:1.62; color:var(--ink-soft); margin:0;">Crisis vitales, duelos, ansiedad, autoestima, vínculos y dependencia emocional. Comprender la raíz de lo que se repite.</p>
+            <p style="font-size:14px; line-height:1.62; color:var(--ink-soft); margin:0;"><strong>Crisis vitales, duelos, ansiedad</strong>, autoestima, vínculos y <strong>dependencia emocional</strong>. Comprender la raíz de lo que se repite.</p>
           </div>
         </div>
         <div data-reveal="" class="h-spec" style="display:grid; grid-template-columns:auto 1fr; gap:clamp(16px,4vw,56px); padding:clamp(30px,4.5vh,52px) clamp(4px,1.4vw,20px); border-top:1px solid var(--line-strong); transition:background .35s ease, padding-left .35s ease;">
@@ -154,7 +154,7 @@ const MARKUP = `
             <div>
               <h3 style="font-family:'Cormorant Garamond'; font-size:clamp(30px,3.4vw,50px); font-weight:500; margin:0 0 12px; color:var(--ink); line-height:1;">Parejas</h3>
             </div>
-            <p style="font-size:14px; line-height:1.62; color:var(--ink-soft); margin:0;">Comunicación, convivencia, deseos, distancias, separaciones y la pregunta de si el vínculo puede sostenerse.</p>
+            <p style="font-size:14px; line-height:1.62; color:var(--ink-soft); margin:0;"><strong>Comunicación, convivencia</strong>, deseos, distancias, separaciones y la pregunta de <strong>si el vínculo puede sostenerse</strong>.</p>
           </div>
         </div>
         <div data-reveal="" class="h-spec" style="display:grid; grid-template-columns:auto 1fr; gap:clamp(16px,4vw,56px); padding:clamp(30px,4.5vh,52px) clamp(4px,1.4vw,20px); border-top:1px solid var(--line-strong); border-bottom:1px solid var(--line-strong); transition:background .35s ease, padding-left .35s ease;">
@@ -163,7 +163,7 @@ const MARKUP = `
             <div>
               <h3 style="font-family:'Cormorant Garamond'; font-size:clamp(30px,3.4vw,50px); font-weight:500; margin:0 0 12px; color:var(--ink); line-height:1;">Familias y orientación a padres</h3>
             </div>
-            <p style="font-size:14px; line-height:1.62; color:var(--ink-soft); margin:0;">Un espacio para pensar los vínculos familiares, las dificultades en la crianza y aquello que cada etapa moviliza. Acompañamiento para construir nuevas formas de escucha y encuentro.</p>
+            <p style="font-size:14px; line-height:1.62; color:var(--ink-soft); margin:0;">Un espacio para pensar los <strong>vínculos familiares</strong>, las <strong>dificultades en la crianza</strong> y aquello que cada etapa moviliza. Acompañamiento para construir nuevas formas de escucha y encuentro.</p>
           </div>
         </div>
       </div>
@@ -177,8 +177,8 @@ const MARKUP = `
           <h2 style="font-family:'Cormorant Garamond'; font-weight:400; font-size:clamp(36px,4.6vw,64px); line-height:1.04; letter-spacing:-.01em; margin:0;">La clínica también se piensa <em style="color:var(--terra-deep);">acompañada</em>.</h2>
         </div>
         <div data-reveal="" style="max-width:50ch;">
-          <p style="font-size:15px; line-height:1.65; color:var(--ink-soft); margin:0 0 18px;">Si estás dando tus primeros pasos en la clínica y aparecen dudas, inseguridades o preguntas frente a la escucha de un paciente, te ofrezco un espacio para pensarlas en compañía.</p>
-          <p style="font-size:15px; line-height:1.65; color:var(--ink-soft); margin:0 0 26px;">En las supervisiones trabajamos sobre casos clínicos, intervenciones, dificultades en la escucha y preguntas acerca de cómo orientar cada proceso. No se trata de encontrar respuestas cerradas, sino de construir una lectura posible y una posición clínica propia.</p>
+          <p style="font-size:15px; line-height:1.65; color:var(--ink-soft); margin:0 0 18px;">Si estás dando tus <strong>primeros pasos en la clínica</strong> y aparecen dudas, inseguridades o preguntas frente a la escucha de un paciente, te ofrezco un espacio para <strong>pensarlas en compañía</strong>.</p>
+          <p style="font-size:15px; line-height:1.65; color:var(--ink-soft); margin:0 0 26px;">En las supervisiones trabajamos sobre <strong>casos clínicos, intervenciones</strong>, dificultades en la escucha y preguntas acerca de cómo orientar cada proceso. No se trata de encontrar respuestas cerradas, sino de construir una lectura posible y una <strong>posición clínica propia</strong>.</p>
           <div style="padding:clamp(20px,2.4vw,26px); border-radius:18px; background:var(--paper); border:1px solid var(--line); margin-bottom:24px;">
             <div style="font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); margin-bottom:14px;">Modalidades</div>
             <div style="display:flex; flex-wrap:wrap; gap:10px;">
@@ -197,7 +197,7 @@ const MARKUP = `
         <div data-reveal="">
           <div style="display:flex; align-items:center; gap:12px; margin-bottom:24px;"><span style="width:32px; height:1px; background:rgba(248,243,233,.4);"></span><span style="font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--sage);">Para equipos, colegios e instituciones</span></div>
           <h2 style="font-family:'Cormorant Garamond'; font-weight:400; font-size:clamp(38px,5.4vw,78px); line-height:1; letter-spacing:-.015em; margin:0 0 24px; color:var(--paper);"><em style="color:var(--terra);">Charlas y talleres</em>, fuera del consultorio.</h2>
-          <p style="max-width:46ch; font-size:clamp(15px,1.3vw,18px); line-height:1.62; color:rgba(248,243,233,.82); margin:0 0 34px;">Diseño charlas y talleres para colegios, familias, equipos e instituciones. Cada propuesta se construye según las necesidades del grupo y busca abrir preguntas sobre los vínculos, la identidad, la salud mental y los desafíos de la vida contemporánea.</p>
+          <p style="max-width:46ch; font-size:clamp(15px,1.3vw,18px); line-height:1.62; color:rgba(248,243,233,.82); margin:0 0 34px;">Diseño charlas y talleres para <strong>colegios, familias, equipos e instituciones</strong>. Cada propuesta se construye <strong>según las necesidades del grupo</strong> y busca abrir preguntas sobre los vínculos, la identidad, la salud mental y los desafíos de la vida contemporánea.</p>
           <div style="display:flex; flex-wrap:wrap; align-items:center; gap:18px;">
             <a href="mailto:lic.juliana.nl@gmail.com?subject=Charla%20o%20taller" class="h-charla" style="display:inline-flex; align-items:center; gap:9px; padding:16px 32px; border-radius:999px; background:var(--paper); color:var(--forest); font-size:15px;">Consultar por una propuesta <span style="font-size:16px;">→</span></a>
             <a href="https://www.linkedin.com/in/juliana-nu%C3%B1ez-laya-8b7451181/" target="_blank" rel="noopener" class="h-charla-link" style="font-size:14px; color:var(--paper); border-bottom:1px solid rgba(248,243,233,.4); padding-bottom:3px;">o escribime por LinkedIn</a>
@@ -208,21 +208,21 @@ const MARKUP = `
             <span style="font-family:'Cormorant Garamond'; font-style:italic; font-size:22px; color:var(--sage); line-height:1; opacity:.85;">01</span>
             <div>
               <h3 style="font-family:'Cormorant Garamond'; font-size:clamp(23px,2.3vw,30px); font-weight:500; margin:0 0 6px; color:var(--paper);">Educativo</h3>
-              <p style="font-size:13.5px; line-height:1.55; color:rgba(248,243,233,.75); margin:0;">Colegios, universidades y familias: etapas escolares, identidad, vínculos y orientación a padres.</p>
+              <p style="font-size:13.5px; line-height:1.55; color:rgba(248,243,233,.75); margin:0;">Colegios, universidades y familias: etapas escolares, identidad, vínculos y <strong>orientación a padres</strong>.</p>
             </div>
           </div>
           <div style="display:grid; grid-template-columns:auto 1fr; gap:clamp(16px,2vw,24px); padding:clamp(20px,2.6vh,26px) 2px; border-top:1px solid rgba(248,243,233,.2);">
             <span style="font-family:'Cormorant Garamond'; font-style:italic; font-size:22px; color:var(--sage); line-height:1; opacity:.85;">02</span>
             <div>
               <h3 style="font-family:'Cormorant Garamond'; font-size:clamp(23px,2.3vw,30px); font-weight:500; margin:0 0 6px; color:var(--paper);">Laboral</h3>
-              <p style="font-size:13.5px; line-height:1.55; color:rgba(248,243,233,.75); margin:0;">Equipos y organizaciones: bienestar, salud mental, clima y comunicación.</p>
+              <p style="font-size:13.5px; line-height:1.55; color:rgba(248,243,233,.75); margin:0;">Equipos y organizaciones: <strong>bienestar, salud mental</strong>, clima y comunicación.</p>
             </div>
           </div>
           <div style="display:grid; grid-template-columns:auto 1fr; gap:clamp(16px,2vw,24px); padding:clamp(20px,2.6vh,26px) 2px; border-top:1px solid rgba(248,243,233,.2); border-bottom:1px solid rgba(248,243,233,.2);">
             <span style="font-family:'Cormorant Garamond'; font-style:italic; font-size:22px; color:var(--sage); line-height:1; opacity:.85;">03</span>
             <div>
               <h3 style="font-family:'Cormorant Garamond'; font-size:clamp(23px,2.3vw,30px); font-weight:500; margin:0 0 6px; color:var(--paper);">Comunitario</h3>
-              <p style="font-size:13.5px; line-height:1.55; color:rgba(248,243,233,.75); margin:0;">Instituciones, grupos y comunidades que quieren pensar juntas la salud mental.</p>
+              <p style="font-size:13.5px; line-height:1.55; color:rgba(248,243,233,.75); margin:0;">Instituciones, grupos y comunidades que quieren <strong>pensar juntas la salud mental</strong>.</p>
             </div>
           </div>
         </div>
@@ -235,7 +235,7 @@ const MARKUP = `
         <div data-reveal="">
           <div style="display:flex; align-items:center; gap:12px; margin-bottom:22px;"><span style="width:30px; height:1px; background:var(--muted);"></span><span style="font-size:11px; letter-spacing:.24em; text-transform:uppercase; color:var(--muted);">SESIONES</span></div>
           <h2 style="font-family:'Cormorant Garamond'; font-weight:400; font-size:clamp(36px,4.6vw,64px); line-height:1; letter-spacing:-.01em; margin:0 0 22px;">Un espacio de <i style="color: #A87655">escucha</i>.</h2>
-          <p style="font-size:15px; line-height:1.65; color:var(--ink-soft); max-width:40ch; margin:0;">Las sesiones son virtuales, sin importar en qué lugar te encuentres. Trabajo con adolescentes, adultos, parejas y familias desde una escucha singular, respetando los tiempos y las necesidades de cada proceso.</p>
+          <p style="font-size:15px; line-height:1.65; color:var(--ink-soft); max-width:40ch; margin:0;">Las sesiones son <strong>virtuales</strong>, sin importar en qué lugar te encuentres. Trabajo con adolescentes, adultos, parejas y familias desde una <strong>escucha singular</strong>, respetando los tiempos y las necesidades de cada proceso.</p>
         </div>
         <div data-reveal="">
           <div style="padding:clamp(24px,2.6vw,30px); border-radius:20px; background:var(--paper); border:1px solid var(--line); margin-bottom:24px;">
@@ -261,8 +261,8 @@ const MARKUP = `
         <div data-reveal="">
           <div style="display:flex; align-items:center; gap:12px; margin-bottom:22px;"><span style="width:30px; height:1px; background:var(--muted);"></span><span style="font-size:11px; letter-spacing:.24em; text-transform:uppercase; color:var(--muted);">Sobre mí</span></div>
           <h2 style="font-family:'Cormorant Garamond'; font-weight:400; font-size:clamp(36px,4.6vw,64px); line-height:1.04; letter-spacing:-.01em; margin:0 0 24px;">Quién está detrás de la <em style="color:var(--terra-deep);">escucha</em>.</h2>
-          <p style="font-size:15px; line-height:1.65; color:var(--ink-soft); max-width:48ch; margin:0 0 18px;">Soy Juliana Núñez Laya, licenciada en Psicología. Trabajo desde una orientación psicoanalítica con una mirada integrativa y acompaño procesos individuales, de pareja y familiares.</p>
-          <p style="font-size:15px; line-height:1.65; color:var(--ink-soft); max-width:48ch; margin:0;">Me especialicé en psicoanálisis de parejas y familias y continúo formándome en clínica psicoanalítica de adultos. Concibo la terapia como un espacio de escucha, elaboración y encuentro con aquello que muchas veces se repite sin que podamos comprender por qué.</p>
+          <p style="font-size:15px; line-height:1.65; color:var(--ink-soft); max-width:48ch; margin:0 0 18px;">Soy <strong>Juliana Núñez Laya</strong>, <strong>licenciada en Psicología</strong>. Trabajo desde una orientación psicoanalítica con una mirada integrativa y acompaño procesos individuales, de pareja y familiares.</p>
+          <p style="font-size:15px; line-height:1.65; color:var(--ink-soft); max-width:48ch; margin:0;">Me especialicé en <strong>psicoanálisis de parejas y familias</strong> y continúo formándome en <strong>clínica psicoanalítica de adultos</strong>. Concibo la terapia como un espacio de escucha, elaboración y encuentro con aquello que muchas veces se repite sin que podamos comprender por qué.</p>
         </div>
         <div data-reveal="">
           <div id="sobreMiPhoto" style="position:relative; border-radius:24px; overflow:hidden; aspect-ratio:4/5; background:var(--bg-2); border:1px dashed var(--line-strong); display:flex; align-items:center; justify-content:center;">
@@ -280,7 +280,7 @@ const MARKUP = `
       <div style="text-align:center; max-width:960px; margin:0 auto;">
         <div data-reveal="" style="display:inline-flex; align-items:center; gap:12px; margin-bottom:24px;"><span style="width:30px; height:1px; background:rgba(248,243,233,.4);"></span><span style="font-size:11px; letter-spacing:.24em; text-transform:uppercase; color:var(--sage);">Contacto</span><span style="width:30px; height:1px; background:rgba(248,243,233,.4);"></span></div>
         <h2 data-reveal="" style="font-family:'Cormorant Garamond'; font-weight:300; font-size:clamp(44px,7vw,96px); line-height:1; letter-spacing:-.015em; margin:0 0 20px;">Cuando quieras,<br>estoy <em style="color:var(--terra);">del otro lado</em>.</h2>
-        <p data-reveal="" style="font-size:clamp(15px,1.3vw,18px); line-height:1.6; color:rgba(248,243,233,.72); max-width:46ch; margin:0 auto 44px;">Si algo de lo que leíste resonó con vos, podés escribirme. Contame brevemente qué te trae y vemos cómo seguir.</p>
+        <p data-reveal="" style="font-size:clamp(15px,1.3vw,18px); line-height:1.6; color:rgba(248,243,233,.72); max-width:46ch; margin:0 auto 44px;">Si algo de lo que leíste resonó con vos, <strong>podés escribirme</strong>. Contame brevemente qué te trae y vemos cómo seguir.</p>
         <div data-reveal="" data-m="four" style="display:grid; grid-template-columns:repeat(4,1fr); gap:14px; max-width:900px; margin:0 auto;">
           <a href="${WA_LINK_TERAPIA}" target="_blank" rel="noopener" class="h-card" style="display:flex; flex-direction:column; align-items:center; gap:12px; padding:26px 16px; border-radius:18px; background:rgba(248,243,233,.06); border:1px solid rgba(248,243,233,.16); color:var(--paper);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3a9 9 0 00-7.86 13.4L3 21l4.75-1.11A9 9 0 1012 3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path><path d="M8.7 9.6c0 3.1 2.6 5.7 5.7 5.9l1.15-1.35c.14-.17.09-.43-.1-.53l-1.55-.78c-.15-.08-.33-.05-.44.08l-.48.53a4.6 4.6 0 01-2.05-2.05l.53-.48c.13-.11.16-.29.08-.44l-.78-1.55c-.1-.19-.36-.24-.53-.1L9.9 9.98" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path></svg><span style="font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--sage);">WhatsApp</span><span style="font-size:14px;">+54 9 11 5939-6866</span></a>
           <a href="https://instagram.com/psico.enraiz" target="_blank" rel="noopener" class="h-card" style="display:flex; flex-direction:column; align-items:center; gap:12px; padding:26px 16px; border-radius:18px; background:rgba(248,243,233,.06); border:1px solid rgba(248,243,233,.16); color:var(--paper);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.5"></rect><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"></circle><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"></circle></svg><span style="font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--sage);">Instagram</span><span style="font-size:14px;">@psico.enraiz</span></a>
