@@ -1,16 +1,8 @@
 "use client";
 
-import { useEffect } from "react";
-
-const WA_NUMBER = "5491159396866";
-const WA_MSG_TERAPIA = encodeURIComponent(
-  "Hola Juliana, vi tu página y quisiera consultarte por un espacio de terapia."
-);
-const WA_MSG_SUPERVISION = encodeURIComponent(
-  "Hola Juliana, vi en tu página la propuesta de supervisión clínica y quisiera recibir más información."
-);
-const WA_LINK_TERAPIA = `https://wa.me/${WA_NUMBER}?text=${WA_MSG_TERAPIA}`;
-const WA_LINK_SUPERVISION = `https://wa.me/${WA_NUMBER}?text=${WA_MSG_SUPERVISION}`;
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
+import ContactForm from "./ContactForm";
 
 const MARKUP = `
 <div style="position:relative; min-height:100vh; background:var(--bg); overflow-x:clip;">
@@ -70,7 +62,7 @@ const MARKUP = `
         </h1>
         <p data-reveal="" style="max-width:44ch; margin:clamp(24px,4vh,40px) 0 0; font-size:clamp(16px,1.3vw,19px); line-height:1.6; color:var(--ink-soft);">Acompaño a adolescentes, adultos, parejas y familias que buscan comprender qué les pasa. No se trata solamente de aliviar aquello que genera malestar, sino de poner en palabras lo que insiste, reconocer las repeticiones y construir otras formas de vincularse con la propia historia.</p>
         <div data-reveal="" style="display:flex; flex-wrap:wrap; align-items:center; gap:14px; margin-top:clamp(28px,4vh,40px);">
-          <a href="${WA_LINK_TERAPIA}" target="_blank" rel="noopener" class="h-dark" style="display:inline-flex; align-items:center; gap:9px; padding:14px 26px; border-radius:999px; background:var(--ink); color:var(--paper); font-size:14.5px;">Contame qué te pasa <span style="font-size:16px;">→</span></a>
+          <a href="#contacto" data-contact-service="individual" class="h-dark" style="display:inline-flex; align-items:center; gap:9px; padding:14px 26px; border-radius:999px; background:var(--ink); color:var(--paper); font-size:14.5px;">Contame qué te pasa <span style="font-size:16px;">→</span></a>
           <a href="https://instagram.com/psico.enraiz" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; font-size:14px; color:var(--ink-soft);"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.5"></rect><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"></circle><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"></circle></svg>@psico.enraiz</a>
         </div>
       </div>
@@ -188,7 +180,7 @@ const MARKUP = `
               <span style="display:inline-flex; align-items:center; padding:9px 16px; border-radius:999px; background:var(--bg); border:1px solid var(--line); font-size:13.5px; color:var(--ink-soft);">Supervisión grupal</span>
             </div>
           </div>
-          <a href="${WA_LINK_SUPERVISION}" target="_blank" rel="noopener" class="h-dark" style="display:inline-flex; align-items:center; gap:9px; padding:14px 26px; border-radius:999px; background:var(--forest); color:var(--paper); font-size:14.5px;">Consultar por supervisión <span style="font-size:16px;">→</span></a>
+          <a href="#contacto" data-contact-service="supervision" class="h-dark" style="display:inline-flex; align-items:center; gap:9px; padding:14px 26px; border-radius:999px; background:var(--forest); color:var(--paper); font-size:14.5px;">Consultar por supervisión <span style="font-size:16px;">→</span></a>
         </div>
       </div>
     </section>
@@ -201,7 +193,7 @@ const MARKUP = `
           <h2 style="font-family:'Cormorant Garamond'; font-weight:400; font-size:clamp(38px,5.4vw,78px); line-height:1; letter-spacing:-.015em; margin:0 0 24px; color:var(--paper);"><em style="color:var(--terra);">Charlas y talleres</em>, fuera del consultorio.</h2>
           <p style="max-width:46ch; font-size:clamp(15px,1.3vw,18px); line-height:1.62; color:rgba(248,243,233,.82); margin:0 0 34px;">Diseño charlas y talleres para colegios, familias, equipos e instituciones. Cada propuesta se construye según las necesidades del grupo y busca abrir preguntas sobre los vínculos, la identidad, la salud mental y los desafíos de la vida contemporánea.</p>
           <div style="display:flex; flex-wrap:wrap; align-items:center; gap:18px;">
-            <a href="mailto:lic.juliana.nl@gmail.com?subject=Charla%20o%20taller" class="h-charla" style="display:inline-flex; align-items:center; gap:9px; padding:16px 32px; border-radius:999px; background:var(--paper); color:var(--forest); font-size:15px;">Consultar por una propuesta <span style="font-size:16px;">→</span></a>
+            <a href="#contacto" data-contact-service="empresas" class="h-charla" style="display:inline-flex; align-items:center; gap:9px; padding:16px 32px; border-radius:999px; background:var(--paper); color:var(--forest); font-size:15px;">Consultar por una propuesta <span style="font-size:16px;">→</span></a>
             <a href="https://www.linkedin.com/in/juliana-nu%C3%B1ez-laya-8b7451181/" target="_blank" rel="noopener" class="h-charla-link" style="font-size:14px; color:var(--paper); border-bottom:1px solid rgba(248,243,233,.4); padding-bottom:3px;">o escribime por LinkedIn</a>
           </div>
         </div>
@@ -250,7 +242,7 @@ const MARKUP = `
             </div>
           </div>
           <div style="display:flex; flex-wrap:wrap; align-items:center; gap:16px;">
-            <a href="${WA_LINK_TERAPIA}" target="_blank" rel="noopener" class="h-dark" style="display:inline-flex; align-items:center; gap:9px; padding:14px 26px; border-radius:999px; background:var(--ink); color:var(--paper); font-size:14.5px;">Consultar por WhatsApp <span style="font-size:16px;">→</span></a>
+            <a href="#contacto" data-contact-service="individual" class="h-dark" style="display:inline-flex; align-items:center; gap:9px; padding:14px 26px; border-radius:999px; background:var(--ink); color:var(--paper); font-size:14.5px;">Consultar por un espacio <span style="font-size:16px;">→</span></a>
             <a href="https://instagram.com/psico.enraiz" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; font-size:14px; color:var(--ink-soft);"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.5"></rect><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"></circle><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"></circle></svg>Escribirme por Instagram</a>
           </div>
         </div>
@@ -278,17 +270,25 @@ const MARKUP = `
     </section>
 
     <!-- CONTACTO -->
-    <section id="contacto" style="padding:clamp(64px,12vh,150px) clamp(18px,4vw,56px); background:var(--forest); color:var(--paper);">
-      <div style="text-align:center; max-width:960px; margin:0 auto;">
-        <div data-reveal="" style="display:inline-flex; align-items:center; gap:12px; margin-bottom:24px;"><span style="width:30px; height:1px; background:rgba(248,243,233,.4);"></span><span style="font-size:11px; letter-spacing:.24em; text-transform:uppercase; color:var(--sage);">Contacto</span><span style="width:30px; height:1px; background:rgba(248,243,233,.4);"></span></div>
-        <h2 data-reveal="" style="font-family:'Cormorant Garamond'; font-weight:300; font-size:clamp(44px,7vw,96px); line-height:1; letter-spacing:-.015em; margin:0 0 20px;">Cuando quieras,<br>estoy <em style="color:var(--terra);">del otro lado</em>.</h2>
-        <p data-reveal="" style="font-size:clamp(15px,1.3vw,18px); line-height:1.6; color:rgba(248,243,233,.72); max-width:46ch; margin:0 auto 44px;">Si algo de lo que leíste resonó con vos, podés escribirme. Contame brevemente qué te trae y vemos cómo seguir.</p>
-        <div data-reveal="" data-m="four" style="display:grid; grid-template-columns:repeat(4,1fr); gap:14px; max-width:900px; margin:0 auto;">
-          <a href="${WA_LINK_TERAPIA}" target="_blank" rel="noopener" class="h-card" style="display:flex; flex-direction:column; align-items:center; gap:12px; padding:26px 16px; border-radius:18px; background:rgba(248,243,233,.06); border:1px solid rgba(248,243,233,.16); color:var(--paper);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3a9 9 0 00-7.86 13.4L3 21l4.75-1.11A9 9 0 1012 3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path><path d="M8.7 9.6c0 3.1 2.6 5.7 5.7 5.9l1.15-1.35c.14-.17.09-.43-.1-.53l-1.55-.78c-.15-.08-.33-.05-.44.08l-.48.53a4.6 4.6 0 01-2.05-2.05l.53-.48c.13-.11.16-.29.08-.44l-.78-1.55c-.1-.19-.36-.24-.53-.1L9.9 9.98" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path></svg><span style="font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--sage);">WhatsApp</span><span style="font-size:14px;">+54 9 11 5939-6866</span></a>
-          <a href="https://instagram.com/psico.enraiz" target="_blank" rel="noopener" class="h-card" style="display:flex; flex-direction:column; align-items:center; gap:12px; padding:26px 16px; border-radius:18px; background:rgba(248,243,233,.06); border:1px solid rgba(248,243,233,.16); color:var(--paper);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.5"></rect><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"></circle><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"></circle></svg><span style="font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--sage);">Instagram</span><span style="font-size:14px;">@psico.enraiz</span></a>
-          <a href="mailto:lic.juliana.nl@gmail.com" class="h-card" style="display:flex; flex-direction:column; align-items:center; gap:12px; padding:26px 16px; border-radius:18px; background:rgba(248,243,233,.06); border:1px solid rgba(248,243,233,.16); color:var(--paper);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.5"></rect><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.5"></path></svg><span style="font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--sage);">Email</span><span style="font-size:13px; word-break:break-all;">lic.juliana.nl@gmail.com</span></a>
-          <a href="https://www.linkedin.com/in/juliana-nu%C3%B1ez-laya-8b7451181/" target="_blank" rel="noopener" class="h-card" style="display:flex; flex-direction:column; align-items:center; gap:12px; padding:26px 16px; border-radius:18px; background:rgba(248,243,233,.06); border:1px solid rgba(248,243,233,.16); color:var(--paper);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.5"></rect><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 014 0v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg><span style="font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--sage);">LinkedIn</span><span style="font-size:14px;">Juliana Núñez Laya</span></a>
+    <section id="contacto" class="contact-section">
+      <div class="contact-layout">
+        <div class="contact-copy" data-reveal="">
+          <div class="contact-kicker"><span></span>Contacto</div>
+          <h2>Cuando quieras,<br>estoy <em>del otro lado</em>.</h2>
+          <p>Si algo de lo que leíste resonó con vos, podés dejarme tu consulta. No hace falta que tengas todo claro para dar el primer paso.</p>
+          <div class="contact-paths">
+            <a href="#contacto" data-contact-service="individual">Terapia individual y de pareja <span aria-hidden="true">↗</span></a>
+            <a href="#contacto" data-contact-service="supervision">Supervisión clínica <span aria-hidden="true">↗</span></a>
+            <a href="#contacto" data-contact-service="empresas">Empresas y organizaciones <span aria-hidden="true">↗</span></a>
+            <a href="#contacto" data-contact-service="educacion">Escuelas e instituciones <span aria-hidden="true">↗</span></a>
+          </div>
+          <p class="contact-aside">Este formulario es para consultas iniciales y propuestas de trabajo. No es un canal de atención de urgencias.</p>
+          <div class="contact-alternatives">
+            <a href="mailto:lic.juliana.nl@gmail.com">También podés escribirme por email</a>
+            <div><a href="https://instagram.com/psico.enraiz" target="_blank" rel="noopener">Instagram</a><span aria-hidden="true">·</span><a href="https://www.linkedin.com/in/juliana-nu%C3%B1ez-laya-8b7451181/" target="_blank" rel="noopener">LinkedIn</a></div>
+          </div>
         </div>
+        <div id="contactFormMount"><noscript><p>Para completar el formulario, activá JavaScript o <a href="mailto:lic.juliana.nl@gmail.com">escribime por email</a>.</p></noscript></div>
       </div>
     </section>
 
@@ -298,7 +298,7 @@ const MARKUP = `
         <div style="font-family:'Cormorant Garamond'; font-size:clamp(30px,4vw,52px); line-height:1; color:var(--ink);">Volver a la <em style="color:var(--terra-deep);">raíz</em>.</div>
         <div style="display:flex; gap:clamp(24px,4vw,56px); flex-wrap:wrap; font-size:13.5px;">
           <div style="display:flex; flex-direction:column; gap:9px;"><span style="font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted);">Secciones</span><a href="#enfoque" style="color:var(--ink-soft);">Enfoque</a><a href="#especialidades" style="color:var(--ink-soft);">Especialidades</a><a href="#supervision" style="color:var(--ink-soft);">Supervisión</a><a href="#charlas" style="color:var(--ink-soft);">Charlas</a><a href="#sesiones" style="color:var(--ink-soft);">Sesiones</a></div>
-          <div style="display:flex; flex-direction:column; gap:9px;"><span style="font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted);">Encontrame</span><a href="https://wa.me/${WA_NUMBER}" target="_blank" rel="noopener" style="color:var(--ink-soft);">WhatsApp</a><a href="https://instagram.com/psico.enraiz" target="_blank" rel="noopener" style="color:var(--ink-soft);">Instagram</a><a href="mailto:lic.juliana.nl@gmail.com" style="color:var(--ink-soft);">Email</a><a href="https://www.linkedin.com/in/juliana-nu%C3%B1ez-laya-8b7451181/" target="_blank" rel="noopener" style="color:var(--ink-soft);">LinkedIn</a></div>
+          <div style="display:flex; flex-direction:column; gap:9px;"><span style="font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted);">Encontrame</span><a href="#contacto" style="color:var(--ink-soft);">Formulario de contacto</a><a href="https://instagram.com/psico.enraiz" target="_blank" rel="noopener" style="color:var(--ink-soft);">Instagram</a><a href="mailto:lic.juliana.nl@gmail.com" style="color:var(--ink-soft);">Email</a><a href="https://www.linkedin.com/in/juliana-nu%C3%B1ez-laya-8b7451181/" target="_blank" rel="noopener" style="color:var(--ink-soft);">LinkedIn</a></div>
         </div>
       </div>
       <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; padding-top:22px; font-size:12px; color:var(--muted);">
@@ -312,7 +312,10 @@ const MARKUP = `
 `;
 
 export default function PsicoEnraiz() {
+  const [formMount, setFormMount] = useState(null);
+
   useEffect(() => {
+    setFormMount(document.getElementById("contactFormMount"));
     const reduced =
       window.matchMedia &&
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -691,5 +694,10 @@ export default function PsicoEnraiz() {
     };
   }, []);
 
-  return <div dangerouslySetInnerHTML={{ __html: MARKUP }} />;
+  return (
+    <>
+      <div dangerouslySetInnerHTML={{ __html: MARKUP }} />
+      {formMount && createPortal(<ContactForm />, formMount)}
+    </>
+  );
 }
