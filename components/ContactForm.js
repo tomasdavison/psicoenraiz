@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { CONTACT_SERVICES } from "@/lib/contact.mjs";
+import { sendContact } from "@/lib/send-contact.mjs";
 
 export default function ContactForm() {
   const [service, setService] = useState("");
@@ -38,19 +39,12 @@ export default function ContactForm() {
     setError("");
     setState("sending");
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(fields),
-        signal: AbortSignal.timeout(20000),
-      });
-      const result = await response.json();
-      if (!response.ok || result.success !== true) throw new Error(result.error || "No pudimos confirmar el envío. Intentá nuevamente o escribime por email.");
+      await sendContact(fields);
       form.reset();
       setState("success");
     } catch (failure) {
       setState("error");
-      setError(failure.name === "TimeoutError" || failure.name === "AbortError" ? "No pudimos confirmar el envío. Tu mensaje sigue acá; podés intentarlo nuevamente o escribirme por email." : failure.message);
+      setError(failure.message);
     }
   }
 
