@@ -79,6 +79,32 @@ em,i{ font-style:italic; }
   border-color:rgba(248,243,233,.3) !important;
 }
 
+/* Experience and services for schools and organizations. */
+.organizations-section{ padding:clamp(72px,10vh,120px) clamp(18px,4vw,56px); background:var(--forest); color:var(--paper); scroll-margin-top:65px; }
+.organizations-layout{ max-width:1160px; margin:auto; display:grid; grid-template-columns:.9fr 1.1fr; gap:clamp(36px,6vw,92px); align-items:start; }
+.organizations-intro{ padding-top:12px; }
+.organizations-kicker{ display:flex; align-items:center; gap:12px; margin-bottom:24px; font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--sage); }
+.organizations-kicker span{ width:32px; height:1px; background:rgba(248,243,233,.4); }
+.organizations-intro h2{ font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(42px,4.8vw,68px); line-height:1.03; letter-spacing:-.015em; margin:0 0 24px; }
+.organizations-intro h2 em{ color:var(--terra); }
+.organizations-intro>p{ max-width:40ch; font-size:clamp(15px,1.3vw,18px); line-height:1.65; color:rgba(248,243,233,.85); margin:0 0 28px; }
+.organizations-linkedin{ display:inline-block; font-size:13px; line-height:1.5; color:var(--paper); border-bottom:1px solid rgba(248,243,233,.4); padding-bottom:4px; }
+.organizations-audience{ display:grid; grid-template-columns:24px minmax(0,1fr); gap:18px; padding:26px 0 30px; border-top:1px solid rgba(248,243,233,.25); }
+.organizations-audience:last-child{ border-bottom:1px solid rgba(248,243,233,.25); padding-bottom:26px; }
+.organizations-number{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:23px; color:var(--sage); line-height:1.2; }
+.organizations-audience h3{ font-family:'Cormorant Garamond',serif; font-size:clamp(27px,2.4vw,34px); font-weight:500; line-height:1.08; margin:0 0 16px; }
+.organizations-audience p{ font-size:14px; line-height:1.65; color:rgba(248,243,233,.84); margin:0 0 12px; }
+.organizations-audience strong{ color:var(--paper); font-weight:500; }
+.organizations-service h4{ font-size:14px; font-weight:500; color:var(--terra); margin:0 0 10px; }
+.organizations-service+.organizations-service{ margin-top:26px; padding-top:24px; border-top:1px solid rgba(248,243,233,.15); }
+.organizations-cta{ display:inline-flex; align-items:center; justify-content:space-between; gap:14px; margin-top:8px; padding:12px 20px; max-width:100%; min-height:44px; border-radius:999px; background:var(--paper); color:var(--forest); font-size:13px; line-height:1.4; }
+.organizations-cta span{ flex:none; }
+.organizations-cta:focus-visible,.organizations-linkedin:focus-visible{ outline:2px solid var(--terra); outline-offset:5px; }
+.organizations-audience .organizations-training{ margin:26px 0 0; padding:16px 18px; background:rgba(248,243,233,.06); border-radius:12px; font-size:12.5px; }
+.organizations-training span{ display:block; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--sage); margin-bottom:7px; }
+@media(max-width:860px){ .organizations-layout{ grid-template-columns:1fr; gap:36px; } .organizations-intro h2{ max-width:13ch; } .organizations-intro>p{ max-width:52ch; } }
+@media(max-width:540px){ .organizations-audience{ grid-template-columns:20px minmax(0,1fr); gap:12px; } .organizations-cta{ padding:12px 16px; } }
+
 /* Contact: a short inquiry form with extra fields for institutions. */
 .contact-section{ padding:clamp(64px,12vh,150px) clamp(18px,4vw,56px); background:var(--forest); color:var(--paper); scroll-margin-top:70px; }
 .contact-layout{ max-width:1160px; margin:auto; display:grid; grid-template-columns:.85fr 1.15fr; gap:clamp(32px,5vw,72px); align-items:start; }

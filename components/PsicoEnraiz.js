@@ -10,8 +10,8 @@ const MARKUP = `
   <!-- top sentinel para estado del nav -->
   <div id="topSentinel" style="position:absolute; top:0; left:0; width:1px; height:50px; pointer-events:none;"></div>
 
-  <!-- ambient canvas background (raíz / partículas orgánicas) -->
-  <canvas id="bgCanvas" style="position:fixed; inset:0; width:100%; height:100%; z-index:0; pointer-events:none; opacity:.62;"></canvas>
+  <!-- Raíces decorativas a lo largo de toda la página. -->
+  <svg id="bgRoots" aria-hidden="true" focusable="false" style="position:absolute; inset:0; width:100%; height:100%; z-index:4; pointer-events:none; overflow:hidden;"></svg>
 
   <!-- film grain overlay -->
   <div style="position:fixed; inset:0; z-index:2; pointer-events:none; mix-blend-mode:multiply; opacity:.06; background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;);"></div>
@@ -28,7 +28,7 @@ const MARKUP = `
       <a href="#enfoque" style="color:var(--ink-soft);">Enfoque</a>
       <a href="#especialidades" style="color:var(--ink-soft);">Especialidades</a>
       <a href="#supervision" style="color:var(--ink-soft);">Supervisión</a>
-      <a href="#charlas" style="color:var(--ink-soft);">Charlas</a>
+      <a href="#charlas" style="color:var(--ink-soft);">Escuelas y empresas</a>
       <a href="#sesiones" style="color:var(--ink-soft);">Sesiones</a>
       <a href="#contacto" class="h-dark" style="display:inline-flex; align-items:center; gap:7px; padding:9px 18px; border-radius:999px; background:var(--ink); color:var(--paper);">Escribime</a>
     </div>
@@ -43,7 +43,7 @@ const MARKUP = `
     <a href="#enfoque" class="mm-link" style="font-family:'Cormorant Garamond'; font-size:38px; color:var(--ink); padding:8px 0;">Enfoque</a>
     <a href="#especialidades" class="mm-link" style="font-family:'Cormorant Garamond'; font-size:38px; color:var(--ink); padding:8px 0;">Especialidades</a>
     <a href="#supervision" class="mm-link" style="font-family:'Cormorant Garamond'; font-size:38px; color:var(--ink); padding:8px 0;">Supervisión</a>
-    <a href="#charlas" class="mm-link" style="font-family:'Cormorant Garamond'; font-size:38px; color:var(--ink); padding:8px 0;">Charlas y talleres</a>
+    <a href="#charlas" class="mm-link" style="font-family:'Cormorant Garamond'; font-size:38px; color:var(--ink); padding:8px 0;">Escuelas y empresas</a>
     <a href="#sesiones" class="mm-link" style="font-family:'Cormorant Garamond'; font-size:38px; color:var(--ink); padding:8px 0;">Sesiones</a>
     <a href="#contacto" class="mm-link" style="font-family:'Cormorant Garamond'; font-size:38px; color:var(--terra-deep); padding:8px 0;"><em>Escribime</em></a>
   </div>
@@ -60,16 +60,17 @@ const MARKUP = `
           <span style="display:block; overflow:hidden;"><span data-line="" style="display:block;">de lo que <em style="color:var(--terra-deep);">duele</em></span></span>
           <span style="display:block; overflow:hidden;"><span data-line="" style="display:block;">e <em style="color:var(--terra-deep);">insiste</em>.</span></span>
         </h1>
-        <p data-reveal="" style="max-width:44ch; margin:clamp(24px,4vh,40px) 0 0; font-size:clamp(16px,1.3vw,19px); line-height:1.6; color:var(--ink-soft);">Acompaño a adolescentes, adultos, parejas y familias que buscan comprender qué les pasa. No se trata solamente de aliviar aquello que genera malestar, sino de poner en palabras lo que insiste, reconocer las repeticiones y construir otras formas de vincularse con la propia historia.</p>
+        <p data-reveal="" style="max-width:44ch; margin:clamp(24px,4vh,40px) 0 0; font-size:clamp(16px,1.3vw,19px); line-height:1.6; color:var(--ink-soft);">Acompaño a adolescentes, adultos, parejas y familias a comprender lo que les pasa y trabajar sobre aquello que se repite en sus vínculos y en su vida.</p>
         <div data-reveal="" style="display:flex; flex-wrap:wrap; align-items:center; gap:14px; margin-top:clamp(28px,4vh,40px);">
           <a href="#contacto" data-contact-service="individual" class="h-dark" style="display:inline-flex; align-items:center; gap:9px; padding:14px 26px; border-radius:999px; background:var(--ink); color:var(--paper); font-size:14.5px;">Contame qué te pasa <span style="font-size:16px;">→</span></a>
           <a href="https://instagram.com/psico.enraiz" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; font-size:14px; color:var(--ink-soft);"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.5"></rect><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"></circle><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"></circle></svg>@psico.enraiz</a>
         </div>
+        <p data-reveal="" style="margin:22px 0 0; max-width:52ch; font-size:13.5px; line-height:1.6;"><a href="#charlas" class="hero-organizations-link" style="color:var(--ink-soft); text-decoration:underline; text-underline-offset:4px;">Escuelas, empresas y organizaciones: conocé mis propuestas&nbsp;<span aria-hidden="true">→</span></a></p>
       </div>
       <!-- portrait -->
       <div data-reveal="" style="position:relative; align-self:stretch; min-height:clamp(380px,74vh,900px); display:flex; align-items:flex-end;">
         <div data-parallax="" style="position:relative; width:100%; height:clamp(380px,74vh,900px); border-radius:240px 240px 26px 26px; overflow:hidden; will-change:transform; border:1px solid var(--line); background:var(--bg-2);">
-          <img src="/assets/juli.jpg" alt="Lic. Juliana Núñez Laya" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 30%;">
+          <img src="/assets/juliana-inicio.jpg" alt="Lic. Juliana Núñez Laya" width="1367" height="2048" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 43%; transform:scale(1.35); transform-origin:50% 47%;">
           <div style="position:absolute; left:0; right:0; bottom:0; height:140px; background:linear-gradient(180deg, rgba(42,38,32,0), rgba(42,38,32,.42));"></div>
         </div>
       </div>
@@ -185,40 +186,43 @@ const MARKUP = `
       </div>
     </section>
 
-    <!-- CHARLAS -->
-    <section id="charlas" style="padding:clamp(72px,13vh,160px) clamp(18px,4vw,56px); background:var(--forest); color:var(--paper);">
-      <div data-m="two" style="max-width:1160px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:clamp(36px,6vw,92px); align-items:center;">
-        <div data-reveal="">
-          <div style="display:flex; align-items:center; gap:12px; margin-bottom:24px;"><span style="width:32px; height:1px; background:rgba(248,243,233,.4);"></span><span style="font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--sage);">Para equipos, colegios e instituciones</span></div>
-          <h2 style="font-family:'Cormorant Garamond'; font-weight:400; font-size:clamp(38px,5.4vw,78px); line-height:1; letter-spacing:-.015em; margin:0 0 24px; color:var(--paper);"><em style="color:var(--terra);">Charlas y talleres</em>, fuera del consultorio.</h2>
-          <p style="max-width:46ch; font-size:clamp(15px,1.3vw,18px); line-height:1.62; color:rgba(248,243,233,.82); margin:0 0 34px;">Diseño charlas y talleres para colegios, familias, equipos e instituciones. Cada propuesta se construye según las necesidades del grupo y busca abrir preguntas sobre los vínculos, la identidad, la salud mental y los desafíos de la vida contemporánea.</p>
-          <div style="display:flex; flex-wrap:wrap; align-items:center; gap:18px;">
-            <a href="#contacto" data-contact-service="empresas" class="h-charla" style="display:inline-flex; align-items:center; gap:9px; padding:16px 32px; border-radius:999px; background:var(--paper); color:var(--forest); font-size:15px;">Consultar por una propuesta <span style="font-size:16px;">→</span></a>
-            <a href="https://www.linkedin.com/in/juliana-nu%C3%B1ez-laya-8b7451181/" target="_blank" rel="noopener" class="h-charla-link" style="font-size:14px; color:var(--paper); border-bottom:1px solid rgba(248,243,233,.4); padding-bottom:3px;">o escribime por LinkedIn</a>
-          </div>
+    <!-- ESCUELAS Y EMPRESAS -->
+    <section id="charlas" class="organizations-section" aria-labelledby="organizations-heading">
+      <div class="organizations-layout">
+        <div data-reveal="" class="organizations-intro">
+          <div class="organizations-kicker"><span></span>Fuera del consultorio</div>
+          <h2 id="organizations-heading">Propuestas para <em>escuelas y empresas.</em></h2>
+          <p>Charlas, talleres y evaluaciones psicolaborales. Cada propuesta se construye según las necesidades de la institución, el equipo y las personas que lo integran.</p>
+          <a href="https://www.linkedin.com/in/juliana-nu%C3%B1ez-laya-8b7451181/" target="_blank" rel="noopener" class="h-charla-link organizations-linkedin">Conocé mi trayectoria en LinkedIn <span aria-hidden="true">↗</span></a>
         </div>
-        <div data-reveal="" style="display:flex; flex-direction:column;">
-          <div style="display:grid; grid-template-columns:auto 1fr; gap:clamp(16px,2vw,24px); padding:clamp(20px,2.6vh,26px) 2px; border-top:1px solid rgba(248,243,233,.2);">
-            <span style="font-family:'Cormorant Garamond'; font-style:italic; font-size:22px; color:var(--sage); line-height:1; opacity:.85;">01</span>
+        <div data-reveal="" class="organizations-offers">
+          <article class="organizations-audience" aria-labelledby="schools-heading">
+            <span class="organizations-number" aria-hidden="true">01</span>
             <div>
-              <h3 style="font-family:'Cormorant Garamond'; font-size:clamp(23px,2.3vw,30px); font-weight:500; margin:0 0 6px; color:var(--paper);">Educativo</h3>
-              <p style="font-size:13.5px; line-height:1.55; color:rgba(248,243,233,.75); margin:0;">Colegios, universidades y familias: etapas escolares, identidad, vínculos y orientación a padres.</p>
+              <h3 id="schools-heading">Escuelas y comunidades educativas</h3>
+              <p>Trabajé como <strong>acompañante terapéutica en el ámbito educativo</strong>, en articulación con equipos docentes y de orientación escolar.</p>
+              <p>Brindé charlas sobre <strong>acceso temprano a redes sociales y amenazas en el contexto escolar</strong> para docentes, directivos, familias y estudiantes de primaria y secundaria, con contenidos adaptados a cada público.</p>
+              <p>Las charlas sobre <strong>consumo problemático</strong> estuvieron dirigidas específicamente a adolescentes del último año de secundaria.</p>
+              <a href="#contacto" data-contact-service="educacion" class="organizations-cta h-charla">Consultar por una propuesta educativa <span aria-hidden="true">→</span></a>
             </div>
-          </div>
-          <div style="display:grid; grid-template-columns:auto 1fr; gap:clamp(16px,2vw,24px); padding:clamp(20px,2.6vh,26px) 2px; border-top:1px solid rgba(248,243,233,.2);">
-            <span style="font-family:'Cormorant Garamond'; font-style:italic; font-size:22px; color:var(--sage); line-height:1; opacity:.85;">02</span>
+          </article>
+          <article class="organizations-audience" aria-labelledby="companies-heading">
+            <span class="organizations-number" aria-hidden="true">02</span>
             <div>
-              <h3 style="font-family:'Cormorant Garamond'; font-size:clamp(23px,2.3vw,30px); font-weight:500; margin:0 0 6px; color:var(--paper);">Laboral</h3>
-              <p style="font-size:13.5px; line-height:1.55; color:rgba(248,243,233,.75); margin:0;">Equipos y organizaciones: bienestar, salud mental, clima y comunicación.</p>
+              <h3 id="companies-heading">Empresas y organizaciones</h3>
+              <div class="organizations-service">
+                <h4>Charlas y talleres</h4>
+                <p>Brindé charlas sobre <strong>salud mental y burnout</strong>, y coordiné <strong>dinámicas grupales</strong> para equipos, managers, líderes y alta dirección. Cada propuesta se adapta a las necesidades y al contexto de la organización.</p>
+                <a href="#contacto" data-contact-service="empresas" class="organizations-cta h-charla">Consultar por charlas y talleres <span aria-hidden="true">→</span></a>
+              </div>
+              <div class="organizations-service">
+                <h4>Evaluaciones psicotécnicas</h4>
+                <p>Ofrezco <strong>evaluaciones psicolaborales</strong> para acompañar procesos de selección de personal. La propuesta contempla las características del puesto y las necesidades de la organización, con un informe que aporta elementos para la toma de decisiones.</p>
+                <a href="#contacto" data-contact-service="psicotecnicos" class="organizations-cta h-charla">Consultar por una evaluación <span aria-hidden="true">→</span></a>
+              </div>
+              <p class="organizations-training"><span>Formación complementaria</span>Diplomatura en Gestión de Recursos Humanos · UCES, 2019.</p>
             </div>
-          </div>
-          <div style="display:grid; grid-template-columns:auto 1fr; gap:clamp(16px,2vw,24px); padding:clamp(20px,2.6vh,26px) 2px; border-top:1px solid rgba(248,243,233,.2); border-bottom:1px solid rgba(248,243,233,.2);">
-            <span style="font-family:'Cormorant Garamond'; font-style:italic; font-size:22px; color:var(--sage); line-height:1; opacity:.85;">03</span>
-            <div>
-              <h3 style="font-family:'Cormorant Garamond'; font-size:clamp(23px,2.3vw,30px); font-weight:500; margin:0 0 6px; color:var(--paper);">Comunitario</h3>
-              <p style="font-size:13.5px; line-height:1.55; color:rgba(248,243,233,.75); margin:0;">Instituciones, grupos y comunidades que quieren pensar juntas la salud mental.</p>
-            </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
@@ -228,21 +232,25 @@ const MARKUP = `
       <div data-m="two" style="display:grid; grid-template-columns:.9fr 1.1fr; gap:clamp(28px,5vw,72px); align-items:start;">
         <div data-reveal="">
           <div style="display:flex; align-items:center; gap:12px; margin-bottom:22px;"><span style="width:30px; height:1px; background:var(--muted);"></span><span style="font-size:11px; letter-spacing:.24em; text-transform:uppercase; color:var(--muted);">SESIONES</span></div>
-          <h2 style="font-family:'Cormorant Garamond'; font-weight:400; font-size:clamp(36px,4.6vw,64px); line-height:1; letter-spacing:-.01em; margin:0 0 22px;">Un espacio de <i style="color: #A87655">escucha</i>.</h2>
-          <p style="font-size:15px; line-height:1.65; color:var(--ink-soft); max-width:40ch; margin:0;">Las sesiones son virtuales, sin importar en qué lugar te encuentres. Trabajo con adolescentes, adultos, parejas y familias desde una escucha singular, respetando los tiempos y las necesidades de cada proceso.</p>
+          <h2 style="font-family:'Cormorant Garamond'; font-weight:400; font-size:clamp(36px,4.6vw,64px); line-height:1; letter-spacing:-.01em; margin:0 0 22px;">Un espacio para <i style="color: #A87655">vos o para ustedes</i>.</h2>
+          <p style="font-size:15px; line-height:1.65; color:var(--ink-soft); max-width:48ch; margin:0 0 18px;">Podés consultar por algo que te preocupa, <strong style="font-weight:600; color:var(--ink);">un malestar que vuelve</strong> o una situación que te cuesta atravesar.</p>
+          <p style="font-size:15px; line-height:1.65; color:var(--ink-soft); max-width:48ch; margin:0 0 18px;">También pueden llegar <strong style="font-weight:600; color:var(--ink);">como pareja</strong>: porque las discusiones se repiten, sienten una distancia que antes no estaba o les cuesta hablar de algo sin terminar enfrentados. La terapia ofrece un espacio para <strong style="font-weight:600; color:var(--ink);">escuchar a ambos</strong> y trabajar sobre lo que sucede entre ustedes.</p>
+          <p style="font-size:15px; line-height:1.65; color:var(--ink-soft); max-width:48ch; margin:0 0 18px;">En el <strong style="font-weight:600; color:var(--ink);">primer encuentro</strong> conversamos sobre qué motiva la consulta y cómo podemos trabajar. Hay lugar para conocernos, hacer preguntas y pensar qué esperan de este espacio.</p>
+          <p style="font-size:15px; line-height:1.65; color:var(--ink-soft); max-width:48ch; margin:0 0 18px;">Las <strong style="font-weight:600; color:var(--ink);">sesiones son virtuales</strong>, estén en Argentina o en otro país.</p>
         </div>
         <div data-reveal="">
           <div style="padding:clamp(24px,2.6vw,30px); border-radius:20px; background:var(--paper); border:1px solid var(--line); margin-bottom:24px;">
-            <div style="font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); margin-bottom:16px;">Modalidades</div>
+            <div style="font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); margin-bottom:16px;">Espacios de atención</div>
             <div style="display:flex; flex-wrap:wrap; gap:10px;">
               <span style="display:inline-flex; align-items:center; padding:9px 16px; border-radius:999px; background:var(--bg); border:1px solid var(--line); font-size:13.5px; color:var(--ink-soft);">Terapia individual</span>
               <span style="display:inline-flex; align-items:center; padding:9px 16px; border-radius:999px; background:var(--bg); border:1px solid var(--line); font-size:13.5px; color:var(--ink-soft);">Terapia de pareja</span>
               <span style="display:inline-flex; align-items:center; padding:9px 16px; border-radius:999px; background:var(--bg); border:1px solid var(--line); font-size:13.5px; color:var(--ink-soft);">Adolescentes</span>
-              <span style="display:inline-flex; align-items:center; padding:9px 16px; border-radius:999px; background:var(--bg); border:1px solid var(--line); font-size:13.5px; color:var(--ink-soft);">Familias y orientación a padres</span>
+              <span style="display:inline-flex; align-items:center; padding:9px 16px; border-radius:999px; background:var(--bg); border:1px solid var(--line); font-size:13.5px; color:var(--ink-soft);">Orientación a familias</span>
             </div>
           </div>
           <div style="display:flex; flex-wrap:wrap; align-items:center; gap:16px;">
-            <a href="#contacto" data-contact-service="individual" class="h-dark" style="display:inline-flex; align-items:center; gap:9px; padding:14px 26px; border-radius:999px; background:var(--ink); color:var(--paper); font-size:14.5px;">Consultar por un espacio <span style="font-size:16px;">→</span></a>
+            <a href="#contacto" data-contact-service="individual" class="h-dark" style="display:inline-flex; align-items:center; gap:9px; padding:14px 26px; border-radius:999px; background:var(--ink); color:var(--paper); font-size:14.5px;">Consultar por terapia individual <span style="font-size:16px;">→</span></a>
+            <a href="#contacto" data-contact-service="pareja" class="h-dark" style="display:inline-flex; align-items:center; gap:9px; padding:14px 26px; border-radius:999px; background:var(--ink); color:var(--paper); font-size:14.5px;">Consultar por terapia de pareja <span style="font-size:16px;">→</span></a>
             <a href="https://instagram.com/psico.enraiz" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; font-size:14px; color:var(--ink-soft);"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.5"></rect><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"></circle><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"></circle></svg>Escribirme por Instagram</a>
           </div>
         </div>
@@ -259,11 +267,8 @@ const MARKUP = `
           <p style="font-size:15px; line-height:1.65; color:var(--ink-soft); max-width:48ch; margin:0;">Me especialicé en psicoanálisis de parejas y familias y continúo formándome en clínica psicoanalítica de adultos. Concibo la terapia como un espacio de escucha, elaboración y encuentro con aquello que muchas veces se repite sin que podamos comprender por qué.</p>
         </div>
         <div data-reveal="">
-          <div id="sobreMiPhoto" style="position:relative; border-radius:24px; overflow:hidden; aspect-ratio:4/5; background:var(--bg-2); border:1px dashed var(--line-strong); display:flex; align-items:center; justify-content:center;">
-            <div style="text-align:center; color:var(--muted);">
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" style="margin:0 auto 10px;"><rect x="3" y="6" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.4"></rect><circle cx="12" cy="13" r="3.4" stroke="currentColor" stroke-width="1.4"></circle><path d="M8 6l1.4-2.2h5.2L16 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-              <div style="font-size:12.5px; letter-spacing:.04em;">Foto próximamente</div>
-            </div>
+          <div id="sobreMiPhoto" style="position:relative; border-radius:24px; overflow:hidden; aspect-ratio:4/5; background:var(--bg-2); border:1px solid var(--line);">
+            <img src="/assets/juliana-sobre-mi.jpg" alt="Juliana Núñez Laya, sentada con una libreta" loading="lazy" width="1366" height="2048" style="display:block; width:100%; height:100%; object-fit:cover; object-position:50% 44%;">
           </div>
         </div>
       </div>
@@ -297,7 +302,7 @@ const MARKUP = `
       <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:30px; flex-wrap:wrap; padding-bottom:36px; border-bottom:1px solid var(--line);">
         <div style="font-family:'Cormorant Garamond'; font-size:clamp(30px,4vw,52px); line-height:1; color:var(--ink);">Volver a la <em style="color:var(--terra-deep);">raíz</em>.</div>
         <div style="display:flex; gap:clamp(24px,4vw,56px); flex-wrap:wrap; font-size:13.5px;">
-          <div style="display:flex; flex-direction:column; gap:9px;"><span style="font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted);">Secciones</span><a href="#enfoque" style="color:var(--ink-soft);">Enfoque</a><a href="#especialidades" style="color:var(--ink-soft);">Especialidades</a><a href="#supervision" style="color:var(--ink-soft);">Supervisión</a><a href="#charlas" style="color:var(--ink-soft);">Charlas</a><a href="#sesiones" style="color:var(--ink-soft);">Sesiones</a></div>
+          <div style="display:flex; flex-direction:column; gap:9px;"><span style="font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted);">Secciones</span><a href="#enfoque" style="color:var(--ink-soft);">Enfoque</a><a href="#especialidades" style="color:var(--ink-soft);">Especialidades</a><a href="#supervision" style="color:var(--ink-soft);">Supervisión</a><a href="#charlas" style="color:var(--ink-soft);">Escuelas y empresas</a><a href="#sesiones" style="color:var(--ink-soft);">Sesiones</a></div>
           <div style="display:flex; flex-direction:column; gap:9px;"><span style="font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted);">Encontrame</span><a href="#contacto" style="color:var(--ink-soft);">Formulario de contacto</a><a href="https://instagram.com/psico.enraiz" target="_blank" rel="noopener" style="color:var(--ink-soft);">Instagram</a><a href="mailto:lic.juliana.nl@gmail.com" style="color:var(--ink-soft);">Email</a><a href="https://www.linkedin.com/in/juliana-nu%C3%B1ez-laya-8b7451181/" target="_blank" rel="noopener" style="color:var(--ink-soft);">LinkedIn</a></div>
         </div>
       </div>
@@ -325,7 +330,7 @@ export default function PsicoEnraiz() {
     const motion = !reduced;
 
     const scope = document.getElementById("scope");
-    const canvas = document.getElementById("bgCanvas");
+    const rootsLayer = document.getElementById("bgRoots");
 
     let bgRaf = null;
     let manRaf = null;
@@ -335,6 +340,8 @@ export default function PsicoEnraiz() {
     let paraEls = null;
     let mqTween = null;
     let bgResize = null;
+    let bgScroll = null;
+    let bgObserver = null;
 
     // ---------- menú mobile ----------
     const burger = document.getElementById("burger");
@@ -376,13 +383,6 @@ export default function PsicoEnraiz() {
       const lines = sec.querySelectorAll("[data-mline]");
       const fill = sec.querySelector("[data-mfill]");
       if (lines.length !== 3) return;
-      if (!motion) {
-        lines[0].style.opacity = 1;
-        lines[1].style.opacity = 0;
-        lines[2].style.opacity = 0;
-        if (fill) fill.style.width = "100%";
-        return;
-      }
       const cl = (v) => Math.max(0, Math.min(1, v));
       const seg = (p, a, b) => cl((p - a) / (b - a));
       const loop = () => {
@@ -391,6 +391,16 @@ export default function PsicoEnraiz() {
         const total = rect.height - vh;
         const p = total > 0 ? cl(-rect.top / total) : 0;
         if (fill) fill.style.width = (p * 100).toFixed(1) + "%";
+        if (!motion) {
+          // Keep all three messages readable without movement or scaling.
+          const active = p < 0.36 ? 0 : p < 0.65 ? 1 : 2;
+          lines.forEach((line, index) => {
+            line.style.opacity = index === active ? "1" : "0";
+            line.style.transform = "none";
+          });
+          manRaf = requestAnimationFrame(loop);
+          return;
+        }
         const o1 = seg(p, 0.26, 0.4);
         lines[0].style.opacity = (1 - o1).toFixed(3);
         lines[0].style.transform =
@@ -421,148 +431,132 @@ export default function PsicoEnraiz() {
       loop();
     }
 
-    // ---------- fondo canvas: raíces reveladas con el scroll ----------
+    // ---------- raíces estáticas: recorren el documento y quedan detrás del contenido ----------
     function setupBg() {
-      const c = canvas;
-      if (!c) return;
-      if (reduced) {
-        c.style.display = "none";
-        return;
-      }
-      const ctx = c.getContext("2d");
-      const mobile = window.innerWidth < 820;
-      let W, H, dpr, segs = [], glows = [];
-      const resize = () => {
-        dpr = Math.min(window.devicePixelRatio || 1, 2);
-        W = c.width = window.innerWidth * dpr;
-        H = c.height = window.innerHeight * dpr;
-        c.style.width = window.innerWidth + "px";
-        c.style.height = window.innerHeight + "px";
+      const svg = rootsLayer;
+      if (!svg || !scope) return;
+      const ns = "http://www.w3.org/2000/svg";
+      const make = (name, attributes) => {
+        const node = document.createElementNS(ns, name);
+        Object.entries(attributes).forEach(([key, value]) => node.setAttribute(key, value));
+        return node;
       };
-      const gen = () => {
-        resize();
-        glows = [
-          { x: W * 0.22, y: H * 0.16, c: "rgba(200,155,123,0.03)" },
-          { x: W * 0.84, y: H * 0.72, c: "rgba(111,132,102,0.03)" },
-        ];
-        segs = [];
-        const tones = ["111,132,102", "168,120,85", "65,81,58"];
-        const roots = [];
-        let created = 0;
-        const maxRoots = mobile ? 24 : 58;
-        const seedN = mobile ? 4 : 7;
-        const spawn = (x, y, ang, width, col, depth) => {
-          if (created >= maxRoots) return;
-          created++;
-          roots.push({ x, y, ang, width, col, depth, steps: 0, done: false });
-        };
-        for (let i = 0; i < seedN; i++) {
-          spawn(
-            ((i + 0.5 + (Math.random() - 0.5) * 0.6) / seedN) * W,
-            -10 * dpr,
-            Math.PI / 2 + (Math.random() - 0.5) * 0.5,
-            (1.8 + Math.random()) * dpr,
-            tones[i % tones.length],
-            0
-          );
-        }
-        let active = 1,
-          guard = 0;
-        while (active > 0 && guard < 6000) {
-          active = 0;
-          for (let k = 0; k < roots.length; k++) {
-            const r = roots[k];
-            if (r.done) continue;
-            active++;
-            r.ang += (Math.random() - 0.5) * 0.5;
-            r.ang += (Math.PI / 2 - r.ang) * 0.05;
-            const len = (5 + Math.random() * 4) * dpr;
-            const nx = r.x + Math.cos(r.ang) * len,
-              ny = r.y + Math.sin(r.ang) * len;
-            segs.push({
-              x1: r.x,
-              y1: r.y,
-              x2: nx,
-              y2: ny,
-              w: Math.max(0.45 * dpr, r.width),
-              col: r.col,
-              a: 0.05 + r.depth * 0.006,
-            });
-            r.x = nx;
-            r.y = ny;
-            r.width *= 0.992;
-            r.steps++;
-            if (Math.random() < 0.03 && r.width > 0.9 * dpr && created < maxRoots) {
-              spawn(
-                r.x,
-                r.y,
-                r.ang + (Math.random() < 0.5 ? -1 : 1) * (0.4 + Math.random() * 0.5),
-                r.width * 0.7,
-                r.col,
-                r.depth + 1
-              );
-            }
-            if (ny > H + 20 * dpr || r.steps > 130 || r.width < 0.5 * dpr) r.done = true;
-          }
-          guard++;
-        }
-      };
-      const band = 150;
-      const drawTo = (revealYcss) => {
-        const revealY = revealYcss * dpr;
-        ctx.clearRect(0, 0, W, H);
-        glows.forEach((gl) => {
-          const r = Math.max(W, H) * 0.55;
-          const grd = ctx.createRadialGradient(gl.x, gl.y, 0, gl.x, gl.y, r);
-          grd.addColorStop(0, gl.c);
-          grd.addColorStop(1, "rgba(241,234,221,0)");
-          ctx.fillStyle = grd;
-          ctx.beginPath();
-          ctx.arc(gl.x, gl.y, r, 0, Math.PI * 2);
-          ctx.fill();
+      const defs = make("defs", {});
+      const feather = make("filter", { id: "roots-content-softener", filterUnits: "userSpaceOnUse" });
+      feather.append(make("feGaussianBlur", { stdDeviation: 10 }));
+      defs.append(feather);
+      const mask = make("mask", { id: "roots-content-mask", maskUnits: "userSpaceOnUse", "mask-type": "luminance" });
+      const backdrop = make("rect", { x: 0, y: 0, fill: "white" });
+      const protectedAreas = make("g", { fill: "black", filter: "url(#roots-content-softener)" });
+      const protectedPhotos = make("g", { fill: "black" });
+      mask.append(backdrop, protectedAreas, protectedPhotos);
+      defs.append(mask);
+      const drawing = make("g", { fill: "none", stroke: "#A87655", "stroke-opacity": ".12", "stroke-linecap": "round", "stroke-linejoin": "round", mask: "url(#roots-content-mask)" });
+      svg.replaceChildren(defs, drawing);
+      let width = 0, height = 0;
+      const protectContent = () => {
+        const origin = svg.parentElement.getBoundingClientRect();
+        // Keep the mask raster within the visible area, even on very long pages.
+        const visibleTop = Math.max(0, -origin.top - 50);
+        const visibleHeight = window.innerHeight + 100;
+        mask.setAttribute("y", visibleTop);
+        mask.setAttribute("height", visibleHeight);
+        feather.setAttribute("x", -20);
+        feather.setAttribute("y", visibleTop);
+        feather.setAttribute("width", width + 40);
+        feather.setAttribute("height", visibleHeight);
+        const nodes = scope.querySelectorAll("h1, h2, h3, h4, p, a, button, img, [data-mline], #marquee, #contactFormMount, footer span, footer > div > div:first-child");
+        const fragment = document.createDocumentFragment();
+        const photos = document.createDocumentFragment();
+        nodes.forEach(node => {
+          const target = node.tagName === "IMG" ? node.closest("#sobreMiPhoto, [data-parallax]") || node : node;
+          const rect = target.getBoundingClientRect();
+          if (!rect.width || !rect.height || rect.bottom < -50 || rect.top > window.innerHeight + 50) return;
+          const collection = node.tagName === "IMG" || node.id === "contactFormMount" ? photos : fragment;
+          collection.append(make("rect", {
+            x: (rect.left - origin.left - 8).toFixed(1),
+            y: (rect.top - origin.top - 10).toFixed(1),
+            width: (rect.width + 16).toFixed(1),
+            height: (rect.height + 20).toFixed(1),
+            rx: 12,
+          }));
         });
-        ctx.lineCap = "round";
-        const bandpx = band * dpr;
-        for (let i = 0; i < segs.length; i++) {
-          const s = segs[i];
-          if (s.y2 > revealY) continue;
-          let f = 1;
-          const d = revealY - s.y2;
-          if (d < bandpx) f = d / bandpx;
-          if (f <= 0) continue;
-          ctx.strokeStyle = "rgba(" + s.col + "," + (s.a * f).toFixed(3) + ")";
-          ctx.lineWidth = s.w;
-          ctx.beginPath();
-          ctx.moveTo(s.x1, s.y1);
-          ctx.lineTo(s.x2, s.y2);
-          ctx.stroke();
-        }
+        protectedAreas.replaceChildren(fragment);
+        protectedPhotos.replaceChildren(photos);
       };
-      let lastReveal = -999;
-      const loop = () => {
-        const root = scope;
-        let p = 0;
-        if (root) {
-          const rect = root.getBoundingClientRect();
-          const max = rect.height - window.innerHeight || 1;
-          p = Math.min(1, Math.max(0, -rect.top / max));
+      const generate = () => {
+        const nextWidth = svg.parentElement.clientWidth;
+        const nextHeight = Math.ceil(scope.getBoundingClientRect().height);
+        if (!nextWidth || !nextHeight) return;
+        if (width === nextWidth && height === nextHeight) {
+          protectContent();
+          return;
         }
-        const revealY = p * window.innerHeight + band;
-        if (Math.abs(revealY - lastReveal) > 1.5) {
-          lastReveal = revealY;
-          drawTo(revealY);
+        width = nextWidth;
+        height = nextHeight;
+        svg.setAttribute("viewBox", "0 0 " + width + " " + height);
+        svg.style.height = height + "px";
+        mask.setAttribute("width", width);
+        backdrop.setAttribute("width", width);
+        backdrop.setAttribute("height", height);
+        let seed = 217604;
+        const random = () => {
+          seed = (Math.imul(1664525, seed) + 1013904223) >>> 0;
+          return seed / 4294967296;
+        };
+        const mobile = width < 820;
+        const count = mobile ? 2 : 4;
+        const fragment = document.createDocumentFragment();
+        const clampX = value => Math.max(5, Math.min(width - 5, value));
+        const addPath = (d, thickness) => fragment.append(make("path", { d, "stroke-width": thickness.toFixed(2) }));
+        const point = (x, y) => x.toFixed(1) + " " + y.toFixed(1);
+        for (let i = 0; i < count; i++) {
+          let x = width * (i === 0 ? .03 : i === count - 1 ? .97 : i / (count - 1));
+          let y = -12;
+          let d = "M" + point(x, y);
+          let step = 0;
+          while (y < height) {
+            const span = 480 + random() * 360;
+            const nextY = Math.min(height + 12, y + span);
+            const nextX = clampX(x + (random() - .5) * width * .24);
+            const sway = (random() - .5) * width * .18;
+            d += " C" + point(clampX(x + sway), y + (nextY - y) * .32) + " " + point(clampX(nextX - sway * .4), y + (nextY - y) * .72) + " " + point(nextX, nextY);
+            if (step++ % 2 === 0 && y > 0 && y < height - 120) {
+              const direction = x < width * .3 ? 1 : x > width * .7 ? -1 : random() < .5 ? -1 : 1;
+              const endX = clampX(x + direction * width * (.12 + random() * .12));
+              const endY = Math.min(height + 12, y + 360 + random() * 440);
+              const middleX = clampX(x + direction * width * .08);
+              const middleY = y + (endY - y) * .45;
+              addPath("M" + point(x,y) + " C" + point(x, y + 90) + " " + point(middleX,middleY - 60) + " " + point(middleX,middleY) + " S" + point(endX,endY - 110) + " " + point(endX,endY), .8);
+              const forkX = clampX(middleX - direction * width * .08);
+              const forkY = Math.min(height + 12, middleY + 240);
+              addPath("M" + point(middleX,middleY) + " C" + point(middleX,middleY + 70) + " " + point(forkX,forkY - 70) + " " + point(forkX,forkY), .45);
+            }
+            x = nextX;
+            y = nextY;
+          }
+          addPath(d, 1.45);
         }
-        bgRaf = requestAnimationFrame(loop);
+        drawing.replaceChildren(fragment);
+        protectContent();
       };
-      gen();
-      drawTo(band);
-      loop();
-      bgResize = () => {
-        gen();
-        lastReveal = -999;
-        drawTo(band);
+      const schedule = callback => {
+        if (bgRaf) cancelAnimationFrame(bgRaf);
+        bgRaf = requestAnimationFrame(() => {
+          bgRaf = null;
+          callback();
+        });
       };
+      bgResize = () => schedule(generate);
+      bgScroll = () => schedule(protectContent);
+      generate();
       window.addEventListener("resize", bgResize);
+      window.addEventListener("scroll", bgScroll, { passive: true });
+      if (window.ResizeObserver) {
+        bgObserver = new ResizeObserver(bgResize);
+        bgObserver.observe(scope);
+      }
+      document.fonts?.ready.then(bgResize);
     }
 
     // ---------- escena GSAP (hero, reveals, parallax, marquee) ----------
@@ -688,6 +682,8 @@ export default function PsicoEnraiz() {
       if (mqTween && mqTween.kill) mqTween.kill();
       if (onPara) window.removeEventListener("scroll", onPara);
       if (bgResize) window.removeEventListener("resize", bgResize);
+      if (bgScroll) window.removeEventListener("scroll", bgScroll);
+      if (bgObserver) bgObserver.disconnect();
       window.removeEventListener("resize", onResize);
       if (burger) burger.removeEventListener("click", openMenu);
       if (mClose) mClose.removeEventListener("click", closeMenu);
